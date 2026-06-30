@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Krishna Polymer Industry</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.0.18">
+</head>
+<body style="background-color: var(--color-bg-light); padding-top: 100px;">
+
+    <!-- Header Navigation -->
+    <header class="site-header scrolled" id="siteHeader">
+        <div class="container nav-container">
+            <a href="{{ url_for('index') }}" class="logo-link" id="logoLink">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Krishna Polymer Industries Logo" class="site-logo">
+            </a>
+            <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="{{ url_for('index') }}" id="navHome">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" id="navAbout">About Us</a></li>
+                    <li class="nav-dropdown-wrapper">
+                        <a href="{{ url_for('products') }}" id="navProducts" class="nav-item-dropdown">Products <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('products') }}">All Products</a></li>
+                            <li><a href="{{ url_for('products') }}?filter=polyolefins">Agro PET Bottles</a></li>
+                            <li><a href="{{ url_for('products') }}?filter=engineering">Agro Chemical Bottles</a></li>
+                            <li><a href="{{ url_for('products') }}?filter=performance">Caps & Closures</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('manufacturing') }}" id="navManufacturing">Manufacturing</a></li>
+                    <li><a href="{{ url_for('contact') }}" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions-right">
+                {% if not login_required %}
+                    <a href="{{ url_for('admin_logout') }}" class="btn btn-secondary btn-sm btn-portal-header" id="headerPortalBtn">Log Out</a>
+                {% else %}
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-portal-header" id="headerPortalBtn">Review</a>
+                {% endif %}
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="container" style="margin-bottom: 5rem;">
+
+        <!-- 1. LOGIN REQUIRED CARD -->
+        {% if login_required %}
+        <div class="login-container">
+            <div class="admin-card reveal active">
+                <div class="text-center" style="margin-bottom: 2rem;">
+                    <span class="admin-title-badge">Security Access</span>
+                    <h2 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Admin Login</h2>
+                    <p style="color: var(--color-text-light); font-size: 0.85rem;">Authentication required to access submitted quote documents.</p>
+                </div>
+
+                {% if error %}
+                    <div class="form-status error" style="margin-bottom: 1.5rem;">{{ error }}</div>
+                {% endif %}
+
+                <form method="POST" action="{{ url_for('admin_dashboard') }}">
+                    <div class="form-group" style="margin-bottom: 1.25rem;">
+                        <label for="adminUsername">Username</label>
+                        <input type="text" name="username" id="adminUsername" required placeholder="Enter username" style="width: 100%;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="adminPassword">Access Password</label>
+                        <input type="password" name="password" id="adminPassword" required placeholder="••••••••" style="width: 100%;">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Authorize Session
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" aria-hidden="true" style="margin-left: 0.25rem;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. ADMIN DASHBOARD CONTENT -->
+        {% else %}
+        <div class="admin-header reveal active">
+            <div>
+                <span class="admin-title-badge">Overview Portal</span>
+                <h1 id="dashboardTitle" style="color: var(--color-primary); font-size: 2.25rem; margin-top: 0.25rem;">Submitted Quote RFQs</h1>
+            </div>
+            <div class="admin-nav-actions">
+                <a href="{{ url_for('admin_logout') }}" class="btn btn-secondary btn-sm">Log Out</a>
+            </div>
+        </div>
+
+        <!-- Tab selection buttons -->
+        <div class="admin-tabs reveal active" style="margin-bottom: 2rem; display: flex; gap: 1rem;">
+            <button class="btn btn-primary btn-sm admin-tab-btn active" data-tab="rfqs" id="btnTabRfqs" style="box-shadow: none;">RFQ Submissions</button>
+            <button class="btn btn-secondary btn-sm admin-tab-btn" data-tab="reviews" id="btnTabReviews" style="box-shadow: none;">Customer Reviews</button>
+            <button class="btn btn-secondary btn-sm admin-tab-btn" data-tab="subscribers" id="btnTabSubscribers" style="box-shadow: none;">Newsletter Subscribers</button>
+        </div>
+
+        <!-- TAB CONTENT: RFQs -->
+        <div id="tabContentRfqs" class="tab-content active">
+            <!-- Stats Counter Panel -->
+            <div class="admin-status-bar reveal active">
+                <div class="admin-stats-group">
+                    <div class="admin-stat">
+                        <span class="num">{{ total_quotes }}</span>
+                        <span class="lbl">Total RFQs</span>
+                    </div>
+                    <div class="admin-stat">
+                        <span class="num" style="color: #0ea5e9;">{{ stats['polyolefins'] }}</span>
+                        <span class="lbl">PET Bottles</span>
+                    </div>
+                    <div class="admin-stat">
+                        <span class="num" style="color: #10b981;">{{ stats['engineering'] }}</span>
+                        <span class="lbl">Agro Chemical</span>
+                    </div>
+                    <div class="admin-stat">
+                        <span class="num" style="color: #8b5cf6;">{{ stats['performance'] }}</span>
+                        <span class="lbl">Caps & Closures</span>
+                    </div>
+                </div>
+
+                <!-- Dashboard Search bar -->
+                <div class="admin-search-wrapper">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-text-light)" stroke-width="2" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" id="adminSearch" placeholder="Search by name, company, etc...">
+                </div>
+            </div>
+
+            <!-- Table View -->
+            <div class="table-responsive reveal active">
+                {% if total_quotes == 0 %}
+                    <div class="text-center" style="padding: 4rem 2rem; color: var(--color-text-light);">
+                        <svg viewBox="0 0 24 24" width="48" height="48" stroke="var(--color-text-light)" stroke-width="1.5" fill="none" style="margin-bottom: 1rem;" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <h3>No Quotes Found</h3>
+                        <p style="margin-top: 0.25rem;">Once clients submit request quotes on the contact page, they will register here.</p>
+                    </div>
+                {% else %}
+                    <table class="spec-table" aria-label="Quote Submissions List">
+                        <thead>
+                            <tr>
+                                <th>Received At</th>
+                                <th>Contact Name</th>
+                                <th>Company</th>
+                                <th>Division</th>
+                                <th>Volume</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for q in quotes %}
+                            <!-- Row 1: Brief data -->
+                            <tr class="submission-item-row" id="rfq-row-{{ q['id'] }}">
+                                <td style="font-weight: 500;">{{ q['created_at'] }}</td>
+                                <td style="font-weight: 600; color: var(--color-primary);">{{ q['name'] }}</td>
+                                <td>{{ q['company'] }}</td>
+                                <td>
+                                    {% if q['division'] == 'polyolefins' %}
+                                        <span class="product-badge badge-poly" style="position: static; display: inline-block;">PET Bottles</span>
+                                    {% elif q['division'] == 'engineering' %}
+                                        <span class="product-badge badge-eng" style="position: static; display: inline-block;">Agro Chemical</span>
+                                    {% elif q['division'] == 'performance' %}
+                                        <span class="product-badge badge-high" style="position: static; display: inline-block;">Caps & Closures</span>
+                                    {% else %}
+                                        <span class="product-badge" style="position: static; display: inline-block; background-color: var(--color-text-light);">Custom Order</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if q['volume'] == 'small' %}&lt; 10k Units
+                                    {% elif q['volume'] == 'medium' %}10k - 50k Units
+                                    {% elif q['volume'] == 'large' %}50k - 200k Units
+                                    {% elif q['volume'] == 'enterprise' %}&gt; 200k Units
+                                    {% else %}{{ q['volume'] }}
+                                    {% endif %}
+                                </td>
+                                <td style="text-align: right; white-space: nowrap;">
+                                    <button class="expand-btn" data-target="detail-{{ q['id'] }}" aria-label="Toggle Details" style="display: inline-flex; align-items: center; margin-right: 0.5rem;">
+                                        Expand
+                                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" style="transition: transform var(--transition-normal); margin-left: 4px;" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </button>
+                                    <button class="btn btn-danger btn-sm delete-btn" data-type="rfq" data-id="{{ q['id'] }}" aria-label="Delete RFQ" style="background-color: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; font-size: 0.8rem; font-weight: 600;">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right: 4px;" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Row 2: Deep quote details (expanded) -->
+                            <tr class="quote-details-row" id="detail-{{ q['id'] }}" style="display: none;">
+                                <td colspan="6">
+                                    <div class="quote-details-box">
+                                        <div class="quote-meta-grid">
+                                            <div class="meta-field">
+                                                <span class="lbl">Email Address</span>
+                                                <span class="val"><a href="mailto:{{ q['email'] }}">{{ q['email'] }}</a></span>
+                                            </div>
+                                            <div class="meta-field">
+                                                <span class="lbl">Phone Number</span>
+                                                <span class="val">{{ q['phone'] or 'N/A' }}</span>
+                                            </div>
+                                            <div class="meta-field">
+                                                <span class="lbl">Submission ID</span>
+                                                <span class="val">#{{ q['id'] }}</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="lbl" style="display: block; font-size: 0.75rem; color: var(--color-text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Material Specifications & Project Info</span>
+                                            <div class="quote-msg-content">{{ q['message'] }}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: REVIEWS -->
+        <div id="tabContentReviews" class="tab-content" style="display: none;">
+            <!-- Stats Counter Panel for Reviews -->
+            <div class="admin-status-bar reveal active">
+                <div class="admin-stats-group">
+                    <div class="admin-stat">
+                        <span class="num">{{ total_reviews }}</span>
+                        <span class="lbl">Total Reviews</span>
+                    </div>
+                    <div class="admin-stat">
+                        <span class="num" style="color: #eab308;">{{ avg_rating }} <span style="font-size: 1.5rem; vertical-align: middle;">★</span></span>
+                        <span class="lbl">Average Rating</span>
+                    </div>
+                </div>
+
+                <!-- Reviews Search bar -->
+                <div class="admin-search-wrapper">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-text-light)" stroke-width="2" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" id="adminReviewSearch" placeholder="Search reviews...">
+                </div>
+            </div>
+
+            <!-- Table View for Reviews -->
+            <div class="table-responsive reveal active">
+                {% if total_reviews == 0 %}
+                    <div class="text-center" style="padding: 4rem 2rem; color: var(--color-text-light);">
+                        <svg viewBox="0 0 24 24" width="48" height="48" stroke="var(--color-text-light)" stroke-width="1.5" fill="none" style="margin-bottom: 1rem;" aria-hidden="true">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>No Reviews Found</h3>
+                        <p style="margin-top: 0.25rem;">Submitted customer reviews will appear in this tab.</p>
+                    </div>
+                {% else %}
+                    <table class="spec-table" aria-label="Customer Reviews List">
+                        <thead>
+                            <tr>
+                                <th>Received At</th>
+                                <th>Customer Name</th>
+                                <th>Email Address</th>
+                                <th>Rating</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for r in reviews %}
+                            <!-- Row 1: Brief data -->
+                            <tr class="review-item-row" id="rev-row-{{ r['id'] }}">
+                                <td style="font-weight: 500;">{{ r['created_at'] }}</td>
+                                <td style="font-weight: 600; color: var(--color-primary);">{{ r['name'] }}</td>
+                                <td><a href="mailto:{{ r['email'] }}">{{ r['email'] }}</a></td>
+                                <td>
+                                    <div class="star-display" style="color: #eab308; font-size: 1.1rem; letter-spacing: 2px;">
+                                        {% for i in range(r['rating']) %}&#9733;{% endfor %}{% for i in range(5 - r['rating']) %}&#9734;{% endfor %}
+                                    </div>
+                                </td>
+                                <td style="text-align: right; white-space: nowrap;">
+                                    <button class="expand-btn review-expand-btn" data-target="rev-detail-{{ r['id'] }}" aria-label="Toggle Details" style="display: inline-flex; align-items: center; margin-right: 0.5rem;">
+                                        Read
+                                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" style="transition: transform var(--transition-normal); margin-left: 4px;" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </button>
+                                    <button class="btn btn-danger btn-sm delete-btn" data-type="review" data-id="{{ r['id'] }}" aria-label="Delete Review" style="background-color: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; font-size: 0.8rem; font-weight: 600;">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right: 4px;" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Row 2: Deep review text (expanded) -->
+                            <tr class="review-details-row" id="rev-detail-{{ r['id'] }}" style="display: none;">
+                                <td colspan="5">
+                                    <div class="quote-details-box" style="border-left: 3px solid #eab308;">
+                                        <div class="quote-meta-grid" style="margin-bottom: 1rem;">
+                                            <div class="meta-field">
+                                                <span class="lbl">Review Rating</span>
+                                                <span class="val" style="color: #eab308; font-weight: 600;">{{ r['rating'] }} / 5 Stars</span>
+                                            </div>
+                                            <div class="meta-field">
+                                                <span class="lbl">Reviewer Email</span>
+                                                <span class="val"><a href="mailto:{{ r['email'] }}">{{ r['email'] }}</a></span>
+                                            </div>
+                                            <div class="meta-field">
+                                                <span class="lbl">Submission ID</span>
+                                                <span class="val">#rev-{{ r['id'] }}</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="lbl" style="display: block; font-size: 0.75rem; color: var(--color-text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Review Text</span>
+                                            <div class="quote-msg-content" style="white-space: pre-wrap;">{{ r['review_text'] }}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: SUBSCRIBERS -->
+        <div id="tabContentSubscribers" class="tab-content" style="display: none;">
+            <!-- Stats Counter Panel -->
+            <div class="admin-status-bar reveal active">
+                <div class="admin-stats-group">
+                    <div class="admin-stat">
+                        <span class="num">{{ total_subscribers }}</span>
+                        <span class="lbl">Active Subscribers</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List of subscribers -->
+            <div class="admin-card reveal active" style="padding: 2rem 0; margin-top: 1.5rem;">
+                <div class="card-header-with-search" style="padding: 0 2rem 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border); margin-bottom: 1rem;">
+                    <h3>All Subscribers</h3>
+                </div>
+
+                {% if total_subscribers == 0 %}
+                    <div style="padding: 3rem 2rem; text-align: center; color: var(--color-text-light);">
+                        <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" style="margin-bottom: 1rem; opacity: 0.5;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <p style="margin: 0;">No newsletter subscribers recorded yet.</p>
+                    </div>
+                {% else %}
+                    <table class="spec-table" aria-label="Newsletter Subscribers List">
+                        <thead>
+                            <tr>
+                                <th>Subscribed At</th>
+                                <th>Email Address</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for s in subscribers %}
+                            <tr id="sub-row-{{ s['id'] }}">
+                                <td style="font-weight: 500;">{{ s['created_at'] }}</td>
+                                <td style="font-weight: 600; color: var(--color-primary);"><a href="mailto:{{ s['email'] }}">{{ s['email'] }}</a></td>
+                                <td style="text-align: right;">
+                                    <button class="btn btn-danger btn-sm delete-btn" data-type="subscriber" data-id="{{ s['id'] }}" aria-label="Delete Subscriber" style="background-color: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; font-size: 0.8rem; font-weight: 600;">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right: 4px;" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <!-- Review Submission Modal -->
+    <div id="reviewModal" class="review-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="review-modal-content">
+            <button class="close-modal" id="closeReviewModal" aria-label="Close review modal">&times;</button>
+            <h2 id="modalTitle" class="text-gradient-dark">Customer Review</h2>
+            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1.5rem;">We value your feedback. Please share your experience with us.</p>
+            <form id="reviewForm" novalidate>
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label for="revName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Full Name *</label>
+                    <input type="text" id="revName" required style="width: 100%;">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label for="revEmail" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Address *</label>
+                    <input type="email" id="revEmail" required style="width: 100%;">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Rating *</label>
+                    <div class="star-rating" id="modalStars" role="radiogroup" aria-label="Rating out of 5 stars">
+                        <span class="star" data-rating="1" role="radio" aria-checked="false" tabindex="0" aria-label="1 Star">&#9733;</span>
+                        <span class="star" data-rating="2" role="radio" aria-checked="false" tabindex="-1" aria-label="2 Stars">&#9733;</span>
+                        <span class="star" data-rating="3" role="radio" aria-checked="false" tabindex="-1" aria-label="3 Stars">&#9733;</span>
+                        <span class="star" data-rating="4" role="radio" aria-checked="false" tabindex="-1" aria-label="4 Stars">&#9733;</span>
+                        <span class="star" data-rating="5" role="radio" aria-checked="false" tabindex="-1" aria-label="5 Stars">&#9733;</span>
+                    </div>
+                    <input type="hidden" id="revRating" value="0">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="revText" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Review *</label>
+                    <textarea id="revText" rows="4" required style="width: 100%; resize: vertical;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="submitReviewBtn" style="width: 100%;">Submit Review</button>
+                <div id="reviewStatus" class="form-status" style="margin-top: 1rem; display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}?v=1.0.16"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reviewBtn = document.getElementById('headerPortalBtn');
+            const reviewModal = document.getElementById('reviewModal');
+            const closeReviewBtn = document.getElementById('closeReviewModal');
+            
+            if (reviewBtn && reviewModal) {
+                reviewBtn.addEventListener('click', () => {
+                    reviewBtn.classList.add('active-review');
+                });
+                
+                const removeActiveState = () => {
+                    reviewBtn.classList.remove('active-review');
+                };
+                
+                if (closeReviewBtn) {
+                    closeReviewBtn.addEventListener('click', removeActiveState);
+                }
+                
+                window.addEventListener('click', (e) => {
+                    if (e.target === reviewModal) {
+                        removeActiveState();
+                    }
+                });
+                
+                document.addEventListener('click', (e) => {
+                    if (e.target && e.target.classList.contains('success-close-btn')) {
+                        removeActiveState();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

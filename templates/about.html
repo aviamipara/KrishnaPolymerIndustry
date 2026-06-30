@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>About Us - Krishna Polymer Industry | Global Quality Standards</title>
+    <meta name="description" content="Learn about Krishna Polymer Industry. Discover our history, custom manufacturing facilities, and commitment to ISO 9001:2015, FDA, and RoHS certifications.">
+    <link rel="canonical" href="https://krishnapolymer.com/about.html">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.0.18">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="siteHeader">
+        <div class="container nav-container">
+            <a href="{{ url_for('index') }}" class="logo-link" id="logoLink">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Krishna Polymer Industries Logo" class="site-logo">
+            </a>
+            <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="{{ url_for('index') }}" id="navHome">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="active" id="navAbout">About Us</a></li>
+                    <li class="nav-dropdown-wrapper">
+                        <a href="{{ url_for('products') }}" id="navProducts" class="nav-item-dropdown">Products <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('products') }}">All Products</a></li>
+                            <li><a href="{{ url_for('products') }}?filter=polyolefins">Agro PET Bottles</a></li>
+                            <li><a href="{{ url_for('products') }}?filter=engineering">Agro Chemical Bottles</a></li>
+                            <li><a href="{{ url_for('products') }}?filter=performance">Caps & Closures</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('manufacturing') }}" id="navManufacturing">Manufacturing</a></li>
+                    <li><a href="{{ url_for('contact') }}" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions-right">
+                <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-portal-header" id="headerPortalBtn">Review</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" id="aboutHeader">
+        <div class="container">
+            <h1 class="page-header-title text-gradient">About Our Company</h1>
+            <ul class="breadcrumbs" aria-label="Breadcrumb">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li>About Us</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Company Profile -->
+    <section class="section" id="aboutProfile" aria-labelledby="profileHeading">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <span class="section-tag">Corporate Profile</span>
+                    <h2 id="profileHeading" class="text-gradient-dark">Geared Towards Polymer Packaging Excellence</h2>
+                    <p>Since our founding in 1998, Krishna Polymer Industry has grown from a specialized molding shop into a leading international manufacturer of high-performance PET packaging solutions, caps, and closures. Headquartered in the industrial hub of Gujarat, India, we serve critical sectors ranging from agrochemicals, pharmaceuticals, food & beverage, to specialized industrial chemicals.</p>
+                    <p>Our commitment goes beyond simply molding plastics. We design and engineer packaging systems with advanced barrier properties, leak-proof designs, and UN-rated safety compliance. Partnering with global leaders, we deliver application-specific consulting, custom tooling, and eco-friendly PCR-PET options that optimize storage safety and shelf-life.</p>
+                </div>
+                <div class="reveal showcase-wrapper">
+                    <div class="showcase-card">
+                        <div class="showcase-tabs" role="tablist">
+                            <button class="showcase-tab active" data-showcase-tab="bottles" role="tab" aria-selected="true">
+                                <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 2v20M17 5H9.5"/>
+                                </svg>
+                                Agro-PET
+                            </button>
+                            <button class="showcase-tab" data-showcase-tab="caps" role="tab" aria-selected="false">
+                                <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                </svg>
+                                Precision Caps
+                            </button>
+                            <button class="showcase-tab" data-showcase-tab="pcr" role="tab" aria-selected="false">
+                                <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7"/>
+                                </svg>
+                                Eco PCR
+                            </button>
+                        </div>
+                        
+                        <div class="showcase-content-area">
+                            <!-- Agro-PET Bottles View -->
+                            <div class="showcase-content active" id="showcase-bottles" role="tabpanel">
+                                <div class="showcase-graphic">
+                                    <div class="glow-spot"></div>
+                                    <svg class="blueprint-svg float-anim" viewBox="0 0 100 120" aria-hidden="true">
+                                        <!-- Bottle Outline -->
+                                        <path d="M42,20 L58,20 L58,28 L64,36 L64,105 C64,109 60,112 56,112 L44,112 C40,112 36,109 36,105 L36,36 L42,28 Z" class="blueprint-path main-outline"/>
+                                        <!-- Multi-layer barrier indicator -->
+                                        <path d="M44,22 L56,22 L56,27 L61,35 L61,103 C61,106 58,109 55,109 L45,109 C42,109 39,106 39,103 L39,35 L44,27 Z" class="blueprint-path inner-line"/>
+                                        <!-- Measuring indicators -->
+                                        <line x1="28" y1="50" x2="34" y2="50" class="blueprint-indicator"/>
+                                        <line x1="28" y1="70" x2="34" y2="70" class="blueprint-indicator"/>
+                                        <line x1="28" y1="90" x2="34" y2="90" class="blueprint-indicator"/>
+                                        <text x="18" y="93" class="blueprint-text">100ml</text>
+                                    </svg>
+                                </div>
+                                <div class="showcase-text">
+                                    <h3>Agro-PET Packaging</h3>
+                                    <p>Engineered for high chemical compatibility. Our bottles feature triple-layer barrier technology to prevent chemical permeation, structural deformation, and leakage of volatile agro-chemicals.</p>
+                                    <div class="specs-pill-group">
+                                        <span class="spec-pill">UN-Rated Certified</span>
+                                        <span class="spec-pill">High-Barrier Resins</span>
+                                        <span class="spec-pill">Zero Permeability</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Precision Caps View -->
+                            <div class="showcase-content" id="showcase-caps" role="tabpanel">
+                                <div class="showcase-graphic">
+                                    <div class="glow-spot"></div>
+                                    <svg class="blueprint-svg float-anim" viewBox="0 0 100 120" aria-hidden="true">
+                                        <!-- Exploded cap and bottle mouth diagram -->
+                                        <!-- Cap -->
+                                        <path d="M30,30 L70,30 L72,48 L28,48 Z" class="blueprint-path main-outline"/>
+                                        <!-- Inner threads -->
+                                        <path d="M34,36 L66,36 M34,42 L66,42" class="blueprint-path thread-line"/>
+                                        <!-- Tamper evident ring -->
+                                        <rect x="32" y="52" width="36" height="6" rx="2" class="blueprint-path inner-line"/>
+                                        <!-- Bottle Neck -->
+                                        <path d="M38,68 L62,68 L62,88 L38,88 Z" class="blueprint-path" style="stroke-opacity: 0.5; stroke-dasharray: 4;"/>
+                                    </svg>
+                                </div>
+                                <div class="showcase-text">
+                                    <h3>Secure Closures & Caps</h3>
+                                    <p>High-precision injection molded caps utilizing advanced induction heat seals (IHS). Our systems guarantee hermetic sealing, tamper evidence, and child-resistant locking mechanism safety.</p>
+                                    <div class="specs-pill-group">
+                                        <span class="spec-pill">Induction Sealed</span>
+                                        <span class="spec-pill">Tamper-Evident Ring</span>
+                                        <span class="spec-pill">Child-Resistant (CRC)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Eco PCR View -->
+                            <div class="showcase-content" id="showcase-pcr" role="tabpanel">
+                                <div class="showcase-graphic">
+                                    <div class="glow-spot"></div>
+                                    <svg class="blueprint-svg float-anim" viewBox="0 0 100 120" aria-hidden="true">
+                                        <!-- Recyclable loop surrounding a bottle outline -->
+                                        <!-- Eco loop arrows -->
+                                        <path d="M50,15 A35,35 0 0,1 80,60 L85,55" class="blueprint-path green-arrow"/>
+                                        <path d="M80,60 A35,35 0 0,1 35,90 L40,95" class="blueprint-path green-arrow"/>
+                                        <path d="M35,90 A35,35 0 0,1 50,15 L45,10" class="blueprint-path green-arrow"/>
+                                        <!-- Inner bottle outline -->
+                                        <path d="M44,40 L56,40 L56,45 L60,50 L60,82 L40,82 L40,50 L44,45 Z" class="blueprint-path inner-line"/>
+                                    </svg>
+                                </div>
+                                <div class="showcase-text">
+                                    <h3>Sustainable PCR-PET</h3>
+                                    <p>Pioneering the circular economy. We manufacture packaging containing up to 100% Post-Consumer Recycled PET, meeting rigid global food-grade standards while reducing carbon footprints by over 60%.</p>
+                                    <div class="specs-pill-group">
+                                        <span class="spec-pill">100% Recyclable</span>
+                                        <span class="spec-pill">FDA Food-Grade Approved</span>
+                                        <span class="spec-pill">60% CO2 Reduction</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Facility -->
+    <section class="section section-dark" id="aboutFacilities" aria-labelledby="facilitiesHeading">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag" style="color: var(--color-accent);">Production Infrastructure</span>
+                <h2 id="facilitiesHeading">Our Manufacturing Facility</h2>
+                <p>We operate all blow molding, injection molding, and quality assurance processes from our unified, fully-integrated plant in Ankleshwar, Gujarat.</p>
+            </div>
+            
+            <div class="grid grid-2 reveal" style="align-items: center; gap: 3rem;">
+                <div>
+                    <h3 style="margin-bottom: 1.25rem; color: var(--color-primary);">Krishna Polymer Industries (Ankleshwar)</h3>
+                    <p style="color: var(--color-text-main); margin-bottom: 1.5rem; line-height: 1.7;">Our main manufacturing plant and corporate headquarters. This state-of-the-art facility houses our automatic stretch blow molding lines, high-speed closure injection lines, cleanroom assembly zones, and QA laboratories.</p>
+                    <p style="color: var(--color-text-main); margin-bottom: 1.5rem; line-height: 1.7;">By consolidating all divisions under one roof, we achieve maximum logistics efficiency, seamless quality control, and rapid order fulfillment for our agricultural, pharmaceutical, and chemical packaging clients.</p>
+                </div>
+                <div class="card reveal" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; border-color: rgba(2, 132, 199, 0.15); background-color: var(--color-card-bg);">
+                    <div style="display: flex; align-items: flex-start; gap: 1.1rem;">
+                        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" style="margin-bottom: 0; width: 28px; height: 28px; flex-shrink: 0; stroke: var(--color-accent); fill: none; stroke-width: 2;">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-linecap="round"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem; font-size: 1.05rem;">Unified Branch Address</h4>
+                            <p style="margin-bottom: 0; font-size: 0.925rem; color: var(--color-text-main); line-height: 1.5;">
+                                Plot No 307-311 Paiki Sub Plot No 74-75, GIDC,<br>
+                                Ankleshwar GIDC, Ankleshwar, Gujarat - 393002, India
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 1.1rem;">
+                        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" style="margin-bottom: 0; width: 28px; height: 28px; flex-shrink: 0; stroke: var(--color-accent); fill: none; stroke-width: 2;">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem; font-size: 1.05rem;">Contact Information</h4>
+                            <p style="margin-bottom: 0; font-size: 0.925rem; color: var(--color-text-main); line-height: 1.5;">
+                                Phone: +91 98254 08222<br>
+                                Email: krishnapolyind@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Certifications & Standards -->
+    <section class="section" id="certifications" aria-labelledby="certsHeading">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Quality Framework</span>
+                <h2 id="certsHeading" class="text-gradient-dark">Certifications & Quality Standards</h2>
+                <p>We manufacture all packaging products under rigid quality management systems, verifying compliance with leading international regulatory bodies.</p>
+            </div>
+            
+            <div class="cert-grid">
+                <!-- Cert 1 -->
+                <div class="cert-card reveal">
+                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <h4>ISO 9001:2015</h4>
+                    <p>Certified Quality Management System covering all blow molding, injection molding, and testing processes.</p>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="cert-card reveal">
+                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <h4>FDA Compliant</h4>
+                    <p>Food-grade certified raw resins and additives for safe direct contact in food, beverage, and pharma packaging.</p>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="cert-card reveal">
+                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <h4>RoHS & REACH</h4>
+                    <p>Verified plastic formulations free of heavy metals and hazardous substances, meeting strict European standards.</p>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="cert-card reveal">
+                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <h4>UN-Rated Packaging</h4>
+                    <p>Agrochemical containers specifically certified for safe transport of hazardous substances and chemicals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer" id="siteFooter">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <a href="{{ url_for('index') }}" class="logo-link">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Krishna Polymer Industries Logo" class="site-logo">
+                    </a>
+                </div>
+                <p>Krishna Polymer Industry is a premier manufacturer of high-quality PET bottles, caps, and chemical containers. Serving global agro, pharma, and industrial sectors with excellence since 1998.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                    </a>
+                    <a href="https://wa.me/919825408222" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none" aria-hidden="true">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Product Divisions</h4>
+                <ul>
+                    <li><a href="{{ url_for('products') }}?filter=polyolefins">Agro PET Bottles</a></li>
+                    <li><a href="{{ url_for('products') }}?filter=engineering">Agro Chemical Bottles</a></li>
+                    <li><a href="{{ url_for('products') }}?filter=performance">Caps & Closures</a></li>
+                    <li><a href="{{ url_for('products') }}">Custom / Special Orders</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company Info</h4>
+                <ul>
+                    <li><a href="{{ url_for('about') }}">About Our Company</a></li>
+                    <li><a href="{{ url_for('manufacturing') }}">Manufacturing Services</a></li>
+                    <li><a href="{{ url_for('about') }}#certifications">Certifications</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact & Locations</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter to receive the latest updates on polymer technology advancements and product releases.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                    <input type="email" placeholder="Your email address" required aria-label="Email for Newsletter">
+                    <button type="submit" class="btn btn-primary btn-sm" style="padding: 0 1.25rem;">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Krishna Polymer Industry. All Rights Reserved.</p>
+            <p>Designed with excellence for the global manufacturing sector.</p>
+        </div>
+    </footer>
+
+    <!-- Review Submission Modal -->
+    <div id="reviewModal" class="review-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="review-modal-content">
+            <button class="close-modal" id="closeReviewModal" aria-label="Close review modal">&times;</button>
+            <h2 id="modalTitle" class="text-gradient-dark">Customer Review</h2>
+            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1.5rem;">We value your feedback. Please share your experience with us.</p>
+            <form id="reviewForm" novalidate>
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label for="revName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Full Name *</label>
+                    <input type="text" id="revName" required style="width: 100%;">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label for="revEmail" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Address *</label>
+                    <input type="email" id="revEmail" required style="width: 100%;">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Rating *</label>
+                    <div class="star-rating" id="modalStars" role="radiogroup" aria-label="Rating out of 5 stars">
+                        <span class="star" data-rating="1" role="radio" aria-checked="false" tabindex="0" aria-label="1 Star">&#9733;</span>
+                        <span class="star" data-rating="2" role="radio" aria-checked="false" tabindex="-1" aria-label="2 Stars">&#9733;</span>
+                        <span class="star" data-rating="3" role="radio" aria-checked="false" tabindex="-1" aria-label="3 Stars">&#9733;</span>
+                        <span class="star" data-rating="4" role="radio" aria-checked="false" tabindex="-1" aria-label="4 Stars">&#9733;</span>
+                        <span class="star" data-rating="5" role="radio" aria-checked="false" tabindex="-1" aria-label="5 Stars">&#9733;</span>
+                    </div>
+                    <input type="hidden" id="revRating" value="0">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="revText" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Review *</label>
+                    <textarea id="revText" rows="4" required style="width: 100%; resize: vertical;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="submitReviewBtn" style="width: 100%;">Submit Review</button>
+                <div id="reviewStatus" class="form-status" style="margin-top: 1rem; display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}?v=1.0.16"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reviewBtn = document.getElementById('headerPortalBtn');
+            const reviewModal = document.getElementById('reviewModal');
+            const closeReviewBtn = document.getElementById('closeReviewModal');
+            
+            if (reviewBtn && reviewModal) {
+                reviewBtn.addEventListener('click', () => {
+                    reviewBtn.classList.add('active-review');
+                });
+                
+                const removeActiveState = () => {
+                    reviewBtn.classList.remove('active-review');
+                };
+                
+                if (closeReviewBtn) {
+                    closeReviewBtn.addEventListener('click', removeActiveState);
+                }
+                
+                window.addEventListener('click', (e) => {
+                    if (e.target === reviewModal) {
+                        removeActiveState();
+                    }
+                });
+                
+                document.addEventListener('click', (e) => {
+                    if (e.target && e.target.classList.contains('success-close-btn')) {
+                        removeActiveState();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
