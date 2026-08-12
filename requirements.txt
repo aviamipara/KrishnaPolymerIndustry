@@ -3,3 +3,5 @@ Jinja2>=3.1
 gunicorn>=21.2
 sendgrid
 python-dotenv
+whitenoise>=6.6.0
+
