@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Krishna Polymer Industry</title>
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.0.18">
+    <link rel="stylesheet" href="./static/css/style.css">
 </head>
 <body style="background-color: var(--color-bg-light); padding-top: 100px;">
 
@@ -13,7 +13,7 @@
     <header class="site-header scrolled" id="siteHeader">
         <div class="container nav-container">
             <a href="{{ url_for('index') }}" class="logo-link" id="logoLink">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Krishna Polymer Industries Logo" class="site-logo">
+                <img src="./static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo">
             </a>
             <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
                 <ul>
@@ -417,7 +417,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ url_for('static', filename='js/main.js') }}?v=1.0.16"></script>
+    <script src="./static/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reviewBtn = document.getElementById('headerPortalBtn');
