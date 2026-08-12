@@ -61,6 +61,8 @@ db.sqlite3
 db.sqlite3-journal
 database.db
 staticfiles/
+staticfiles_build/
+
 
 # Flask stuff:
 instance/
