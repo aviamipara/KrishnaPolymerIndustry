@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#f1f5f9" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+
+    <!-- Subtle Grid / Tech Pattern Overlay -->
+    <pattern id="dotPattern" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#cbd5e1" opacity="0.45" />
+    </pattern>
+
+    <!-- Hexagon Gradient Facets -->
+    <linearGradient id="hexGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
+    <linearGradient id="hexGradNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="hexGradAzure" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12" />
+    </filter>
+    <filter id="logoShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1e3a8a" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="400" fill="url(#bgGradient)" />
+  <rect width="1200" height="400" fill="url(#dotPattern)" />
+
+  <!-- Top and Bottom Dark Charcoal Borders -->
+  <rect x="0" y="0" width="1200" height="10" fill="#0f172a" />
+  <rect x="0" y="390" width="1200" height="10" fill="#0f172a" />
+
+  <!-- Subtle Accent Lines beneath borders -->
+  <rect x="0" y="10" width="1200" height="2" fill="#0284c7" opacity="0.6" />
+  <rect x="0" y="388" width="1200" height="2" fill="#0284c7" opacity="0.6" />
+
+  <!-- Main Content Group -->
+  <g transform="translate(100, 75)">
+    
+    <!-- Minimalist Geometric Hexagon Logo on the Left -->
+    <g transform="translate(40, 25)" filter="url(#logoShadow)">
+      <!-- Outer Hexagon Structure / Facets -->
+      <!-- Center is approx (100, 100) -->
+      <!-- Facet 1: Top Right (Cobalt Blue) -->
+      <polygon points="100,20 170,60 170,140 100,100" fill="url(#hexGradPrimary)" />
+      
+      <!-- Facet 2: Bottom / Left (Navy Blue) -->
+      <polygon points="100,100 170,140 100,180 30,140" fill="url(#hexGradNavy)" />
+
+      <!-- Facet 3: Top Left / Inner (Azure Accent & Cobalt) -->
+      <polygon points="30,60 100,20 100,100 30,140" fill="url(#hexGradAzure)" opacity="0.95" />
+
+      <!-- Modern Geometric Cutouts / Inner Floating Hexagon Core -->
+      <polygon points="100,55 140,78 140,122 100,145 60,122 60,78" fill="#ffffff" opacity="0.92" />
+      <polygon points="100,68 128,84 128,116 100,132 72,116 72,84" fill="url(#hexGradNavy)" />
+      
+      <!-- Dynamic Polymer / Molecular Node Points -->
+      <circle cx="100" cy="20" r="5" fill="#38bdf8" />
+      <circle cx="170" cy="60" r="5" fill="#2563eb" />
+      <circle cx="170" cy="140" r="5" fill="#1e3a8a" />
+      <circle cx="100" cy="180" r="5" fill="#0f172a" />
+      <circle cx="30" cy="140" r="5" fill="#0284c7" />
+      <circle cx="30" cy="60" r="5" fill="#38bdf8" />
+    </g>
+
+    <!-- Vertical Decorative Divider Line -->
+    <line x1="300" y1="35" x2="300" y2="215" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" />
+    <line x1="300" y1="80" x2="300" y2="170" stroke="#0284c7" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Typography Block on the Right -->
+    <g transform="translate(340, 0)">
+      
+      <!-- Main Company Name: KRISHNA -->
+      <text x="0" y="85" 
+            font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+            font-size="64" 
+            font-weight="900" 
+            letter-spacing="6" 
+            fill="#0f172a">
+        KRISHNA
+      </text>
+
+      <!-- Subtitle: POLYMER INDUSTRIES -->
+      <text x="3" y="138" 
+            font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+            font-size="25" 
+            font-weight="700" 
+            letter-spacing="4" 
+            fill="#1e3a8a">
+        POLYMER INDUSTRIES
+      </text>
+
+      <!-- Horizontal Accent Bar -->
+      <rect x="3" y="156" width="560" height="2.5" fill="#e2e8f0" rx="1" />
+      <rect x="3" y="156" width="140" height="2.5" fill="#0284c7" rx="1" />
+
+      <!-- Description Line: MFGR. OF ALL TYPES OF PET BOTTLES & CAP -->
+      <text x="4" y="192" 
+            font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+            font-size="16" 
+            font-weight="600" 
+            letter-spacing="2.5" 
+            fill="#0284c7">
+        MFGR. OF ALL TYPES OF PET BOTTLES &amp; CAP
+      </text>
+
+    </g>
+  </g>
+</svg>

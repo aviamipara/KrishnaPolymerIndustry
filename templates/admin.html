@@ -32,13 +32,11 @@
                     <li><a href="{{ url_for('contact') }}" id="navContact">Contact</a></li>
                 </ul>
             </nav>
+            {% if not login_required %}
             <div class="header-actions-right">
-                {% if not login_required %}
-                    <a href="{{ url_for('admin_logout') }}" class="btn btn-secondary btn-sm btn-portal-header" id="headerPortalBtn">Log Out</a>
-                {% else %}
-                    <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-portal-header" id="headerPortalBtn">Review</a>
-                {% endif %}
+                <a href="{{ url_for('admin_logout') }}" class="btn btn-secondary btn-sm btn-portal-header" id="headerPortalBtn">Log Out</a>
             </div>
+            {% endif %}
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
                     <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
@@ -376,80 +374,7 @@
 
     </div>
 
-    <!-- Review Submission Modal -->
-    <div id="reviewModal" class="review-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
-        <div class="review-modal-content">
-            <button class="close-modal" id="closeReviewModal" aria-label="Close review modal">&times;</button>
-            <h2 id="modalTitle" class="text-gradient-dark">Customer Review</h2>
-            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1.5rem;">We value your feedback. Please share your experience with us.</p>
-            <form id="reviewForm" novalidate>
-                <div class="form-group" style="margin-bottom: 1.25rem;">
-                    <label for="revName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Full Name *</label>
-                    <input type="text" id="revName" required style="width: 100%;">
-                </div>
-                
-                <div class="form-group" style="margin-bottom: 1.25rem;">
-                    <label for="revEmail" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Address *</label>
-                    <input type="email" id="revEmail" required style="width: 100%;">
-                </div>
-                
-                <div class="form-group" style="margin-bottom: 1.25rem;">
-                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Rating *</label>
-                    <div class="star-rating" id="modalStars" role="radiogroup" aria-label="Rating out of 5 stars">
-                        <span class="star" data-rating="1" role="radio" aria-checked="false" tabindex="0" aria-label="1 Star">&#9733;</span>
-                        <span class="star" data-rating="2" role="radio" aria-checked="false" tabindex="-1" aria-label="2 Stars">&#9733;</span>
-                        <span class="star" data-rating="3" role="radio" aria-checked="false" tabindex="-1" aria-label="3 Stars">&#9733;</span>
-                        <span class="star" data-rating="4" role="radio" aria-checked="false" tabindex="-1" aria-label="4 Stars">&#9733;</span>
-                        <span class="star" data-rating="5" role="radio" aria-checked="false" tabindex="-1" aria-label="5 Stars">&#9733;</span>
-                    </div>
-                    <input type="hidden" id="revRating" value="0">
-                </div>
-                
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="revText" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Review *</label>
-                    <textarea id="revText" rows="4" required style="width: 100%; resize: vertical;"></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" id="submitReviewBtn" style="width: 100%;">Submit Review</button>
-                <div id="reviewStatus" class="form-status" style="margin-top: 1rem; display: none;"></div>
-            </form>
-        </div>
-    </div>
-
     <!-- Scripts -->
     <script src="/static/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const reviewBtn = document.getElementById('headerPortalBtn');
-            const reviewModal = document.getElementById('reviewModal');
-            const closeReviewBtn = document.getElementById('closeReviewModal');
-            
-            if (reviewBtn && reviewModal) {
-                reviewBtn.addEventListener('click', () => {
-                    reviewBtn.classList.add('active-review');
-                });
-                
-                const removeActiveState = () => {
-                    reviewBtn.classList.remove('active-review');
-                };
-                
-                if (closeReviewBtn) {
-                    closeReviewBtn.addEventListener('click', removeActiveState);
-                }
-                
-                window.addEventListener('click', (e) => {
-                    if (e.target === reviewModal) {
-                        removeActiveState();
-                    }
-                });
-                
-                document.addEventListener('click', (e) => {
-                    if (e.target && e.target.classList.contains('success-close-btn')) {
-                        removeActiveState();
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>
