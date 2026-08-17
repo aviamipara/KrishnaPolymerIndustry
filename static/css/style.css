@@ -2954,6 +2954,63 @@ table.spec-table tr:hover {
     color: var(--color-text-main);
 }
 
+/* --- Floating WhatsApp Quick Chat Button --- */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #25D366;
+    color: #ffffff !important;
+    padding: 0.75rem 1.35rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    animation: pulse-wa 2.5s infinite;
+}
+
+.floating-whatsapp:hover {
+    background: #1eb857;
+    color: #ffffff !important;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+.floating-whatsapp svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+@keyframes pulse-wa {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-whatsapp {
+        bottom: 18px;
+        right: 18px;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+
 
 
 

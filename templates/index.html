@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Optimization -->
     <title>Krishna Polymer Industry - All Types of PET Bottles & Caps</title>
-    <meta name="description" content="Krishna Polymer Industry manufactures premium PET bottles and custom caps. Discover all types of PET bottles and caps for agricultural and chemical packaging.">
+    <meta name="description"
+        content="Krishna Polymer Industry manufactures premium PET bottles and custom caps. Discover all types of PET bottles and caps for agricultural and chemical packaging.">
     <link rel="canonical" href="https://krishnapolymer.com/">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/static/css/style.css?v=3.0">
 </head>
+
 <body>
 
     <!-- Header Navigation -->
     <header class="site-header" id="siteHeader">
         <div class="nav-container">
             <a href="{{ url_for('index') }}" class="logo-link" id="logoLink">
-                <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo" style="height: 86px; max-height: 86px; max-width: 380px; width: auto; object-fit: contain;">
+                <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo"
+                    style="height: 86px; max-height: 86px; max-width: 380px; width: auto; object-fit: contain;">
             </a>
             <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
                 <ul>
                     <li><a href="{{ url_for('index') }}" class="active" id="navHome">Home</a></li>
                     <li><a href="{{ url_for('about') }}" id="navAbout">About Us</a></li>
                     <li class="nav-dropdown-wrapper">
-                        <a href="{{ url_for('products') }}" id="navProducts" class="nav-item-dropdown">Products <span class="caret"></span></a>
+                        <a href="{{ url_for('products') }}" id="navProducts" class="nav-item-dropdown">Products <span
+                                class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ url_for('products') }}">All Products</a></li>
                             <li><a href="{{ url_for('products') }}?filter=polyolefins">Agro PET Bottles</a></li>
@@ -36,9 +41,11 @@
                     <li><a href="{{ url_for('manufacturing') }}" id="navManufacturing">Manufacturing</a></li>
                     <li><a href="{{ url_for('contact') }}" id="navContact">Contact</a></li>
                     <li>
-                        <a href="https://wa.me/919825408222" target="_blank" rel="noopener noreferrer" class="nav-whatsapp-btn" id="navWhatsApp" aria-label="Chat on WhatsApp">
+                        <a href="https://wa.me/919558888611" target="_blank" rel="noopener noreferrer"
+                            class="nav-whatsapp-btn" id="navWhatsApp" aria-label="Chat on WhatsApp">
                             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                             </svg>
                             WhatsApp Chat
                         </a>
@@ -47,7 +54,7 @@
             </nav>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" />
                 </svg>
             </button>
         </div>
@@ -56,18 +63,28 @@
     <!-- Hero Banner Section -->
     <section class="hero" id="homeHero">
         <button class="hero-arrow hero-arrow-left" id="heroPrevBtn" aria-label="Previous Slide">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"
+                aria-hidden="true">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
         </button>
         <button class="hero-arrow hero-arrow-right" id="heroNextBtn" aria-label="Next Slide">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"
+                aria-hidden="true">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
         </button>
 
         <div class="container hero-grid">
             <div class="hero-content reveal">
                 <h1 style="color: #ffffff;">All Types of PET Bottles & Caps</h1>
-                <p>Krishna Polymer Industry is a world leader in the manufacturing of all types of high-quality PET bottles and caps. We have remained committed to providing not only the best packaging products in our industry, but the best service to our customers as well.</p>
+                <p>Krishna Polymer Industry is a world leader in the manufacturing of all types of high-quality PET
+                    bottles and caps. We have remained committed to providing not only the best packaging products in
+                    our industry, but the best service to our customers as well.</p>
                 <div class="hero-buttons">
-                    <a href="{{ url_for('products') }}" class="btn btn-primary" id="heroExploreBtn" style="background-color: #ffffff; color: var(--color-primary); border-color: #ffffff;">Explore Our Products</a>
+                    <a href="{{ url_for('products') }}" class="btn btn-primary" id="heroExploreBtn"
+                        style="background-color: #ffffff; color: var(--color-primary); border-color: #ffffff;">Explore
+                        Our Products</a>
                 </div>
             </div>
             <!-- Keep empty right column to adapt layout nicely over background image composition -->
@@ -81,59 +98,71 @@
             <div class="section-header text-center reveal">
                 <span class="section-tag">Core Portfolio</span>
                 <h2 id="divisionsHeading" class="text-gradient-dark">Key Product Divisions</h2>
-                <p>We manufacture premium polymer packaging solutions engineered to offer high drop strength, chemical resistance, and leak-proof sealing.</p>
+                <p>We manufacture premium polymer packaging solutions engineered to offer high drop strength, chemical
+                    resistance, and leak-proof sealing.</p>
             </div>
-            
+
             <div class="grid grid-3">
                 <!-- Card 1 -->
                 <div class="card division-card krish-tec reveal">
-                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M9 3h6v3H9zM7 9a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 13h6M9 17h6" stroke-linecap="round"/>
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <path d="M9 3h6v3H9zM7 9a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9 13h6M9 17h6" stroke-linecap="round" />
                     </svg>
                     <h3>Agro PET Bottles</h3>
-                    <p>Formulated for high structural strength, clarity, and leak protection. Perfect for liquid fertilizers, bio-stimulants, and retail agrochemicals.</p>
+                    <p>Formulated for high structural strength, clarity, and leak protection. Perfect for liquid
+                        fertilizers, bio-stimulants, and retail agrochemicals.</p>
                     <ul class="division-list">
                         <li>100ml & 250ml Retail Bottles</li>
                         <li>500ml & 1L Standard Bottles</li>
                         <li>Milky White & Custom Colors</li>
                         <li>Ergonomic Grip & Round Models</li>
                     </ul>
-                    <a href="{{ url_for('products') }}?filter=polyolefins" class="btn btn-secondary btn-sm" style="width: 100%;">View PET Bottles</a>
+                    <a href="{{ url_for('products') }}?filter=polyolefins" class="btn btn-secondary btn-sm"
+                        style="width: 100%;">View PET Bottles</a>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="card division-card krish-mec reveal">
-                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M10 3h4v4h-4zM6 10a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 11v5M9 14h6" stroke-linecap="round"/>
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <path d="M10 3h4v4h-4zM6 10a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 11v5M9 14h6" stroke-linecap="round" />
                     </svg>
                     <h3>Agro Chemical Bottles</h3>
-                    <p>Engineered with advanced barrier polymers to safely package aggressive solvent pesticides, herbicides, and toxic concentrates without deformation.</p>
+                    <p>Engineered with advanced barrier polymers to safely package aggressive solvent pesticides,
+                        herbicides, and toxic concentrates without deformation.</p>
                     <ul class="division-list">
                         <li>500ml Heavy Duty Bottles</li>
                         <li>1 Litre Industrial Containers</li>
                         <li>High Permeation & Panelling Resistance</li>
                         <li>Reinforced Neck & Wall Thickness</li>
                     </ul>
-                    <a href="{{ url_for('products') }}?filter=engineering" class="btn btn-secondary btn-sm" style="width: 100%;">View Chemical Bottles</a>
+                    <a href="{{ url_for('products') }}?filter=engineering" class="btn btn-secondary btn-sm"
+                        style="width: 100%;">View Chemical Bottles</a>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="card division-card krish-perf reveal">
-                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M6 5h12v4H6zM4 9h16v3H4z" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6 12v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6" stroke-linecap="round"/>
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <path d="M6 5h12v4H6zM4 9h16v3H4z" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6 12v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6" stroke-linecap="round" />
                     </svg>
                     <h3>Caps & Closures</h3>
-                    <p>Precision-molded caps featuring tamper-evident rings, child-resistant locks, and compatibility with induction heat seal liners for absolute zero leakage.</p>
+                    <p>Precision-molded caps featuring tamper-evident rings, child-resistant locks, and compatibility
+                        with induction heat seal liners for absolute zero leakage.</p>
                     <ul class="division-list">
                         <li>25mm & 28mm Standard Caps</li>
                         <li>46mm Heavy Duty Closures</li>
                         <li>Tamper-Evident Security Rings</li>
                         <li>Custom Branding & Embossing</li>
                     </ul>
-                    <a href="{{ url_for('products') }}?filter=performance" class="btn btn-secondary btn-sm" style="width: 100%;">View Caps & Closures</a>
+                    <a href="{{ url_for('products') }}?filter=performance" class="btn btn-secondary btn-sm"
+                        style="width: 100%;">View Caps & Closures</a>
                 </div>
             </div>
         </div>
@@ -147,29 +176,41 @@
                 <h2 class="text-gradient-dark">Premium Product Range</h2>
                 <p>Explore our manufactured PET bottles and preforms engineered to meet top industry standards.</p>
             </div>
-            
+
             <div class="grid grid-2" style="gap: 2.5rem; margin-top: 2rem;">
                 <!-- Column 1: PET Bottles -->
-                <div class="reveal" style="background: #ffffff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); transition: transform var(--transition-normal); border: 1px solid var(--color-border);">
+                <div class="reveal"
+                    style="background: #ffffff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); transition: transform var(--transition-normal); border: 1px solid var(--color-border);">
                     <div style="height: 320px; overflow: hidden; position: relative;">
-                        <img src="/static/images/home_bottles.jpg" alt="Manufactured PET Bottles" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="/static/images/home_bottles.jpg" alt="Manufactured PET Bottles"
+                            style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div style="padding: 2rem; text-align: center;">
                         <h3 style="color: var(--color-primary); margin-bottom: 0.75rem;">PET Bottles</h3>
-                        <p style="color: var(--color-text-light); margin-bottom: 1.5rem; font-size: 0.95rem; min-height: 4.5rem;">High-durability, lightweight PET bottles in various colors and sizes, suitable for agrochemicals, pharmaceuticals, and consumer goods.</p>
-                        <a href="{{ url_for('manufacturing') }}" class="btn btn-secondary btn-sm" style="border-radius: 9999px;">View Bottles Gallery</a>
+                        <p
+                            style="color: var(--color-text-light); margin-bottom: 1.5rem; font-size: 0.95rem; min-height: 4.5rem;">
+                            High-durability, lightweight PET bottles in various colors and sizes, suitable for
+                            agrochemicals, pharmaceuticals, and consumer goods.</p>
+                        <a href="{{ url_for('manufacturing') }}" class="btn btn-secondary btn-sm"
+                            style="border-radius: 9999px;">View Bottles Gallery</a>
                     </div>
                 </div>
-                
+
                 <!-- Column 2: PET Preforms -->
-                <div class="reveal" style="background: #ffffff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); transition: transform var(--transition-normal); border: 1px solid var(--color-border);">
+                <div class="reveal"
+                    style="background: #ffffff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); transition: transform var(--transition-normal); border: 1px solid var(--color-border);">
                     <div style="height: 320px; overflow: hidden; position: relative;">
-                        <img src="/static/images/home_preforms.jpg" alt="Manufactured PET Preforms" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="/static/images/home_preforms.jpg" alt="Manufactured PET Preforms"
+                            style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div style="padding: 2rem; text-align: center;">
                         <h3 style="color: var(--color-primary); margin-bottom: 0.75rem;">PET Preforms</h3>
-                        <p style="color: var(--color-text-light); margin-bottom: 1.5rem; font-size: 0.95rem; min-height: 4.5rem;">Precision injection-molded preforms featuring accurate neck finishes, wall thickness, and weight consistency for reliable blow molding.</p>
-                        <a href="{{ url_for('manufacturing') }}" class="btn btn-secondary btn-sm" style="border-radius: 9999px;">View Molding Gallery</a>
+                        <p
+                            style="color: var(--color-text-light); margin-bottom: 1.5rem; font-size: 0.95rem; min-height: 4.5rem;">
+                            Precision injection-molded preforms featuring accurate neck finishes, wall thickness, and
+                            weight consistency for reliable blow molding.</p>
+                        <a href="{{ url_for('manufacturing') }}" class="btn btn-secondary btn-sm"
+                            style="border-radius: 9999px;">View Molding Gallery</a>
                     </div>
                 </div>
             </div>
@@ -183,46 +224,78 @@
                 <div class="reveal">
                     <span class="section-tag">Eco-Conscious Tech</span>
                     <h2 id="ecoHeading" class="text-gradient-dark">Sustainable PCR-PET Packaging</h2>
-                    <p>Krishna Polymer Industry is actively driving industrial circularity. Our custom recycling lines wash, shred, pelletize, and reform high-quality post-consumer PET (PCR-PET). This specialized range offers barrier properties and drop strength that rival virgin packaging, while significantly shrinking your project's carbon footprint.</p>
-                    <p>Perfect for eco-friendly agrochemical containers, organic bio-stimulant packaging, and corporate green initiatives.</p>
-                    <a href="{{ url_for('manufacturing') }}" class="btn btn-primary" id="sustainabilityLearnBtn">Our Manufacturing</a>
+                    <p>Krishna Polymer Industry is actively driving industrial circularity. Our custom recycling lines
+                        wash, shred, pelletize, and reform high-quality post-consumer PET (PCR-PET). This specialized
+                        range offers barrier properties and drop strength that rival virgin packaging, while
+                        significantly shrinking your project's carbon footprint.</p>
+                    <p>Perfect for eco-friendly agrochemical containers, organic bio-stimulant packaging, and corporate
+                        green initiatives.</p>
+                    <a href="{{ url_for('manufacturing') }}" class="btn btn-primary" id="sustainabilityLearnBtn">Our
+                        Manufacturing</a>
                 </div>
-                <div class="reveal" style="background-color: var(--color-primary); border-radius: var(--radius-lg); padding: 3rem; color: #ffffff; position: relative;">
-                    <div class="hero-glow-element" style="right: 10%; bottom: 10%; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);"></div>
-                    <span style="color: var(--color-success); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: block; margin-bottom: 1rem;">Green Manufacturing</span>
+                <div class="reveal"
+                    style="background-color: var(--color-primary); border-radius: var(--radius-lg); padding: 3rem; color: #ffffff; position: relative;">
+                    <div class="hero-glow-element"
+                        style="right: 10%; bottom: 10%; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);">
+                    </div>
+                    <span
+                        style="color: var(--color-success); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: block; margin-bottom: 1rem;">Green
+                        Manufacturing</span>
                     <h3 style="color: #ffffff; margin-bottom: 1rem;">Eco-PET Packaging Highlights</h3>
                     <ul style="list-style: none; margin-bottom: 2rem;">
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-success)" stroke-width="2" fill="none" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <li
+                            style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-success)"
+                                stroke-width="2" fill="none" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Up to 100% PCR-PET Content
                         </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-success)" stroke-width="2" fill="none" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <li
+                            style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-success)"
+                                stroke-width="2" fill="none" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             100% Recyclable and Circular Design
                         </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-success)" stroke-width="2" fill="none" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <li
+                            style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-success)"
+                                stroke-width="2" fill="none" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Chemical Barrier & Drop Strength Integrity
                         </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-success)" stroke-width="2" fill="none" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <li
+                            style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--color-success)"
+                                stroke-width="2" fill="none" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Reduced Carbon Footprint Packaging
                         </li>
                     </ul>
-                    <a href="{{ url_for('products') }}" class="btn btn-outline-white btn-sm" id="ecoProductsBtn">Browse Eco Bottles</a>
+                    <a href="{{ url_for('products') }}" class="btn btn-outline-white btn-sm" id="ecoProductsBtn">Browse
+                        Eco Bottles</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section section-dark text-center" style="background-image: radial-gradient(circle at center, rgba(2, 132, 199, 0.05) 0%, transparent 60%);">
+    <section class="section section-dark text-center"
+        style="background-image: radial-gradient(circle at center, rgba(2, 132, 199, 0.05) 0%, transparent 60%);">
         <div class="container reveal">
             <h2 style="margin-bottom: 1.5rem;">Ready to Discuss Your Packaging Specifications?</h2>
-            <p style="color: var(--color-text-light); max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 1.1rem;">Whether you require standard PET bottles or highly customized cap sizes and logo embossing, our packaging team is here to assist.</p>
+            <p style="color: var(--color-text-light); max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 1.1rem;">
+                Whether you require standard PET bottles or highly customized cap sizes and logo embossing, our
+                packaging team is here to assist.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="{{ url_for('contact') }}" class="btn btn-primary" id="bottomCtaQuoteBtn">Request Packaging Quote</a>
-                <a href="{{ url_for('manufacturing') }}" class="btn btn-outline-white" id="bottomCtaManufacturingBtn">View Manufacturing</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-primary" id="bottomCtaQuoteBtn">Request Packaging
+                    Quote</a>
+                <a href="{{ url_for('manufacturing') }}" class="btn btn-outline-white"
+                    id="bottomCtaManufacturingBtn">View Manufacturing</a>
             </div>
         </div>
     </section>
@@ -236,17 +309,30 @@
                         <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo">
                     </a>
                 </div>
-                <p>Krishna Polymer Industry is a premier manufacturer of high-quality PET bottles, caps, and chemical containers. Serving global agro, pharma, and industrial sectors with excellence since 1998.</p>
+                <p>Krishna Polymer Industry is a premier manufacturer of high-quality PET bottles, caps, and chemical
+                    containers. Serving global agro, pharma, and industrial sectors with excellence since 1998.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
                     </a>
                     <a href="#" class="social-icon" aria-label="Twitter">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
                     </a>
-                    <a href="https://wa.me/919825408222" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none" aria-hidden="true">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    <a href="https://wa.me/919558888611" class="social-icon" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none"
+                            aria-hidden="true">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
                     </a>
                 </div>
@@ -271,8 +357,10 @@
             </div>
             <div class="footer-col footer-newsletter">
                 <h4>Stay Updated</h4>
-                <p>Subscribe to our newsletter to receive the latest updates on polymer technology advancements and product releases.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                <p>Subscribe to our newsletter to receive the latest updates on polymer technology advancements and
+                    product releases.</p>
+                <form class="newsletter-form"
+                    onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
                     <input type="email" placeholder="Your email address" required aria-label="Email for Newsletter">
                     <button type="submit" class="btn btn-primary btn-sm" style="padding: 0 1.25rem;">Join</button>
                 </form>
@@ -284,7 +372,16 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Chat Widget -->
+    <a href="https://wa.me/919558888611" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floatingWhatsApp" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>WhatsApp Chat</span>
+    </a>
+
     <!-- Scripts -->
     <script src="/static/js/main.js"></script>
 </body>
+
 </html>

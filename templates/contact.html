@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Optimization -->
     <title>Contact Us & Request a Quote - Krishna Polymer Industry</title>
-    <meta name="description" content="Submit a Request for Quote (RFQ) or contact our sales and engineering offices. View addresses and locations for our Ahmedabad and Pune facilities.">
+    <meta name="description"
+        content="Submit a Request for Quote (RFQ) or contact our sales and engineering offices. View addresses and locations for our Ahmedabad and Pune facilities.">
     <link rel="canonical" href="https://krishnapolymer.com/contact.html">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/static/css/style.css?v=3.0">
 </head>
+
 <body>
 
     <!-- Header Navigation -->
     <header class="site-header" id="siteHeader">
         <div class="nav-container">
             <a href="{{ url_for('index') }}" class="logo-link" id="logoLink">
-                <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo" style="height: 86px; max-height: 86px; max-width: 380px; width: auto; object-fit: contain;">
+                <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo"
+                    style="height: 86px; max-height: 86px; max-width: 380px; width: auto; object-fit: contain;">
             </a>
             <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
                 <ul>
                     <li><a href="{{ url_for('index') }}" id="navHome">Home</a></li>
                     <li><a href="{{ url_for('about') }}" id="navAbout">About Us</a></li>
                     <li class="nav-dropdown-wrapper">
-                        <a href="{{ url_for('products') }}" id="navProducts" class="nav-item-dropdown">Products <span class="caret"></span></a>
+                        <a href="{{ url_for('products') }}" id="navProducts" class="nav-item-dropdown">Products <span
+                                class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ url_for('products') }}">All Products</a></li>
                             <li><a href="{{ url_for('products') }}?filter=polyolefins">Agro PET Bottles</a></li>
@@ -36,9 +41,11 @@
                     <li><a href="{{ url_for('manufacturing') }}" id="navManufacturing">Manufacturing</a></li>
                     <li><a href="{{ url_for('contact') }}" class="active" id="navContact">Contact</a></li>
                     <li>
-                        <a href="https://wa.me/919825408222" target="_blank" rel="noopener noreferrer" class="nav-whatsapp-btn" id="navWhatsApp" aria-label="Chat on WhatsApp">
+                        <a href="https://wa.me/919558888611" target="_blank" rel="noopener noreferrer"
+                            class="nav-whatsapp-btn" id="navWhatsApp" aria-label="Chat on WhatsApp">
                             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                             </svg>
                             WhatsApp Chat
                         </a>
@@ -47,7 +54,7 @@
             </nav>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" />
                 </svg>
             </button>
         </div>
@@ -68,7 +75,7 @@
     <section class="section contact-form-section" id="contactPanel" aria-labelledby="formHeading">
         <div class="container">
             <div class="connect-section-grid">
-                
+
                 <!-- Left Column: Title -->
                 <div class="connect-left-content reveal">
                     <span class="connect-left-subtitle">Got a Question?</span>
@@ -76,7 +83,8 @@
                 </div>
 
                 <!-- Right Column: Form -->
-                <div class="form-container reveal" style="border: none; box-shadow: var(--shadow-md); background-color: var(--color-bg-light);">
+                <div class="form-container reveal"
+                    style="border: none; box-shadow: var(--shadow-md); background-color: var(--color-bg-light);">
                     <div class="form-status" id="formStatus" role="alert"></div>
 
                     <form id="rfqForm" novalidate>
@@ -101,9 +109,12 @@
                             <textarea id="messageText" placeholder="Please Leave Enquiry Here"></textarea>
                         </div>
 
-                        <div class="form-group full-width" style="flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; display: flex;">
-                            <input type="checkbox" id="whatsappConsent" style="width: auto; margin: 0; cursor: pointer;" checked>
-                            <label for="whatsappConsent" style="font-weight: normal; cursor: pointer; font-size: 0.9rem; color: var(--color-text-main); margin-bottom: 0;">
+                        <div class="form-group full-width"
+                            style="flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; display: flex;">
+                            <input type="checkbox" id="whatsappConsent" style="width: auto; margin: 0; cursor: pointer;"
+                                checked>
+                            <label for="whatsappConsent"
+                                style="font-weight: normal; cursor: pointer; font-size: 0.9rem; color: var(--color-text-main); margin-bottom: 0;">
                                 You can reach out to us on Whatsapp
                             </label>
                         </div>
@@ -112,7 +123,8 @@
                             By submitting this form, you agreed to our privacy policy.
                         </p>
 
-                        <button type="submit" class="btn btn-primary" id="submitBtn" style="border-radius: var(--radius-pill); background-color: var(--color-accent); border: none; font-size: 1.05rem; padding: 0.85rem 2.5rem; cursor: pointer; font-weight: 600;">
+                        <button type="submit" class="btn btn-primary" id="submitBtn"
+                            style="border-radius: var(--radius-pill); background-color: var(--color-accent); border: none; font-size: 1.05rem; padding: 0.85rem 2.5rem; cursor: pointer; font-weight: 600;">
                             Submit
                         </button>
                     </form>
@@ -128,14 +140,19 @@
             <div class="section-header text-center reveal">
                 <span class="section-tag" style="color: var(--color-accent);">Our Location</span>
                 <h2 id="locationHeading">Factory & Office</h2>
-                <p>We operate from our single, fully-integrated blow molding and injection molding branch in Ankleshwar, Gujarat.</p>
+                <p>We operate from our single, fully-integrated blow molding and injection molding branch in Ankleshwar,
+                    Gujarat.</p>
             </div>
 
             <div class="grid grid-2 reveal" style="align-items: center; gap: 3rem;">
                 <div>
                     <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Krishna Polymer Industries</h3>
-                    <p style="color: var(--color-text-main); margin-bottom: 1.5rem; line-height: 1.7;">Our unified manufacturing plant and headquarters. This branch houses our automatic stretch blow molding lines for PET packaging, high-speed injection lines for closures, and our quality assurance laboratories.</p>
-                    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
+                    <p style="color: var(--color-text-main); margin-bottom: 1.5rem; line-height: 1.7;">Our unified
+                        manufacturing plant and headquarters. This branch houses our automatic stretch blow molding
+                        lines for PET packaging, high-speed injection lines for closures, and our quality assurance
+                        laboratories.</p>
+                    <div
+                        style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
                         <p style="margin-bottom: 0; color: var(--color-text-main);">
                             <strong>Address:</strong><br>
                             Plot No 307-311 Paiki Sub Plot No 74-75, GIDC,<br>
@@ -143,12 +160,16 @@
                         </p>
                         <p style="margin-bottom: 0; color: var(--color-text-main);">
                             <strong>Contact:</strong><br>
-                            +91 98254 08222
+                            +91 95588 88611
                         </p>
                     </div>
                 </div>
                 <div class="map-embed" style="height: 350px;">
-                    <iframe src="https://maps.google.com/maps?q=Krishna%20Polymer%20Industries,%20Plot%20No%20307-311%20Paiki%20Sub%20Plot%20No%2074-75,%20GIDC,%20Ankleshwar%20GIDC,%20Ankleshwar,%20Gujarat%20393002&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Krishna Polymer Industries Location Map"></iframe>
+                    <iframe
+                        src="https://maps.google.com/maps?q=Krishna%20Polymer%20Industries,%20Plot%20No%20307-311%20Paiki%20Sub%20Plot%20No%2074-75,%20GIDC,%20Ankleshwar%20GIDC,%20Ankleshwar,%20Gujarat%20393002&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Krishna Polymer Industries Location Map"></iframe>
                 </div>
             </div>
         </div>
@@ -160,19 +181,26 @@
             <div class="section-header text-center reveal">
                 <span class="section-tag">Help Desk</span>
                 <h2 id="faqHeading" class="text-gradient-dark">Frequently Asked Questions</h2>
-                <p>Find quick answers regarding our polymer ordering process, custom certifications, and capabilities.</p>
+                <p>Find quick answers regarding our polymer ordering process, custom certifications, and capabilities.
+                </p>
             </div>
 
             <div class="accordion reveal">
-                
+
                 <!-- FAQ 1 -->
                 <div class="accordion-item">
                     <div class="accordion-header" id="faqHeader1">
                         What is your Minimum Order Quantity (MOQ) for custom sheets?
-                        <svg class="accordion-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
                     </div>
                     <div class="accordion-content">
-                        <p>For standard stocked sheets (e.g., standard natural or black HDPE/PP panels), there is no MOQ. For custom extruded colors, dimensions, or specialized grades (such as antimicrobial or specific glass-filled formulas), our MOQ typically ranges from 500kg to 1 Ton per size, depending on our extrusion line configuration.</p>
+                        <p>For standard stocked sheets (e.g., standard natural or black HDPE/PP panels), there is no
+                            MOQ. For custom extruded colors, dimensions, or specialized grades (such as antimicrobial or
+                            specific glass-filled formulas), our MOQ typically ranges from 500kg to 1 Ton per size,
+                            depending on our extrusion line configuration.</p>
                     </div>
                 </div>
 
@@ -180,10 +208,15 @@
                 <div class="accordion-item">
                     <div class="accordion-header" id="faqHeader2">
                         Can you supply custom extruded profiles or shapes?
-                        <svg class="accordion-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
                     </div>
                     <div class="accordion-content">
-                        <p>Yes. We operate custom profile extrusion tooling. We can design custom dies based on your CAD drawings. For custom profile shapes, an initial tooling and die setup fee applies, along with specific MOQ runs.</p>
+                        <p>Yes. We operate custom profile extrusion tooling. We can design custom dies based on your CAD
+                            drawings. For custom profile shapes, an initial tooling and die setup fee applies, along
+                            with specific MOQ runs.</p>
                     </div>
                 </div>
 
@@ -191,10 +224,16 @@
                 <div class="accordion-item">
                     <div class="accordion-header" id="faqHeader3">
                         Are your KrishTec® HDPE cutting boards FDA compliant?
-                        <svg class="accordion-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
                     </div>
                     <div class="accordion-content">
-                        <p>Absolutely. Our KrishTec® Sanitary Cutting Board sheets are manufactured strictly with 100% virgin polymer resin and FDA-compliant dyes. They comply fully with FDA Food Regulation 21 CFR 177.1520 and NSF standards, making them suitable for commercial food processing facilities.</p>
+                        <p>Absolutely. Our KrishTec® Sanitary Cutting Board sheets are manufactured strictly with 100%
+                            virgin polymer resin and FDA-compliant dyes. They comply fully with FDA Food Regulation 21
+                            CFR 177.1520 and NSF standards, making them suitable for commercial food processing
+                            facilities.</p>
                     </div>
                 </div>
 
@@ -202,10 +241,15 @@
                 <div class="accordion-item">
                     <div class="accordion-header" id="faqHeader4">
                         How do you control dimensional stress in compressed sheets?
-                        <svg class="accordion-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
                     </div>
                     <div class="accordion-content">
-                        <p>All of our compressed UHMW and heavy-gauge plates undergo a slow, computer-controlled heat annealing cycle. This process relieves internal molecular stress, ensuring that the sheets do not bow, cup, or warp when you slice, route, or machine them into precise components.</p>
+                        <p>All of our compressed UHMW and heavy-gauge plates undergo a slow, computer-controlled heat
+                            annealing cycle. This process relieves internal molecular stress, ensuring that the sheets
+                            do not bow, cup, or warp when you slice, route, or machine them into precise components.</p>
                     </div>
                 </div>
 
@@ -222,17 +266,30 @@
                         <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo">
                     </a>
                 </div>
-                <p>Krishna Polymer Industry is a premier manufacturer of high-quality PET bottles, caps, and chemical containers. Serving global agro, pharma, and industrial sectors with excellence since 1998.</p>
+                <p>Krishna Polymer Industry is a premier manufacturer of high-quality PET bottles, caps, and chemical
+                    containers. Serving global agro, pharma, and industrial sectors with excellence since 1998.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
                     </a>
                     <a href="#" class="social-icon" aria-label="Twitter">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
                     </a>
-                    <a href="https://wa.me/919825408222" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none" aria-hidden="true">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    <a href="https://wa.me/919558888611" class="social-icon" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none"
+                            aria-hidden="true">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
                     </a>
                 </div>
@@ -257,8 +314,10 @@
             </div>
             <div class="footer-col footer-newsletter">
                 <h4>Stay Updated</h4>
-                <p>Subscribe to our newsletter to receive the latest updates on polymer technology advancements and product releases.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                <p>Subscribe to our newsletter to receive the latest updates on polymer technology advancements and
+                    product releases.</p>
+                <form class="newsletter-form"
+                    onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
                     <input type="email" required aria-label="Email for Newsletter">
                     <button type="submit" class="btn btn-primary btn-sm" style="padding: 0 1.25rem;">Join</button>
                 </form>
@@ -275,18 +334,31 @@
         <div class="review-modal-content" style="text-align: center; padding: 2.5rem; max-width: 500px;">
             <button class="close-modal" id="closeSuccessModal" aria-label="Close modal">&times;</button>
             <div class="success-icon-wrapper" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                <svg viewBox="0 0 24 24" width="64" height="64" stroke="#059669" stroke-width="2" fill="none" style="animation: float 4s ease-in-out infinite;">
-                    <circle cx="12" cy="12" r="10" stroke="#059669" stroke-width="2"/>
-                    <polyline points="7 13 10 16 17 9"/>
+                <svg viewBox="0 0 24 24" width="64" height="64" stroke="#059669" stroke-width="2" fill="none"
+                    style="animation: float 4s ease-in-out infinite;">
+                    <circle cx="12" cy="12" r="10" stroke="#059669" stroke-width="2" />
+                    <polyline points="7 13 10 16 17 9" />
                 </svg>
             </div>
-            <h3 id="successModalTitle" style="margin-bottom: 1rem; font-size: 1.75rem; color: var(--color-primary); font-family: var(--font-heading); font-weight: 700;">Enquiry Submitted!</h3>
-            <p id="successModalMessage" style="color: var(--color-text-main); margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.6;"></p>
-            <button type="button" class="btn btn-primary" id="successOkBtn" style="width: 100%; border-radius: 9999px; background-color: var(--color-accent); border: none; padding: 0.75rem 0; font-weight: 600;">
+            <h3 id="successModalTitle"
+                style="margin-bottom: 1rem; font-size: 1.75rem; color: var(--color-primary); font-family: var(--font-heading); font-weight: 700;">
+                Enquiry Submitted!</h3>
+            <p id="successModalMessage"
+                style="color: var(--color-text-main); margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.6;"></p>
+            <button type="button" class="btn btn-primary" id="successOkBtn"
+                style="width: 100%; border-radius: 9999px; background-color: var(--color-accent); border: none; padding: 0.75rem 0; font-weight: 600;">
                 OK
             </button>
         </div>
     </div>
+
+    <!-- Floating WhatsApp Chat Widget -->
+    <a href="https://wa.me/919558888611" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floatingWhatsApp" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>WhatsApp Chat</span>
+    </a>
 
     <!-- Scripts -->
     <script src="/static/js/main.js"></script>
@@ -296,7 +368,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const productParam = urlParams.get('product');
             const divisionSelector = document.getElementById('polymerDivision');
-            
+
             if (productParam && divisionSelector) {
                 if (['all_agro_pet_bottles', '1ltr_agro_round', 'agriculture_pet_250ml', 'agro_pet_250ml', 'agro_pet_100ml', '1ltr_agro_slim', 'agro_pet_500ml'].includes(productParam)) {
                     divisionSelector.value = 'polyolefins';
@@ -309,4 +381,5 @@
         });
     </script>
 </body>
+
 </html>

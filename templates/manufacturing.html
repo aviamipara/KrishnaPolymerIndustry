@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Optimization -->
     <title>Manufacturing & Molding Technology - Krishna Polymer Industry</title>
-    <meta name="description" content="Explore our plastic processing capabilities including high-speed injection molding and stretch blow molding with Japanese Toshiba machinery.">
+    <meta name="description"
+        content="Explore our plastic processing capabilities including high-speed injection molding and stretch blow molding with Japanese Toshiba machinery.">
     <link rel="canonical" href="https://krishnapolymer.com/manufacturing.html">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/static/css/style.css?v=3.0">
 </head>
+
 <body>
 
     <!-- Header Navigation -->
     <header class="site-header" id="siteHeader">
         <div class="nav-container">
             <a href="{{ url_for('index') }}" class="logo-link" id="logoLink">
-                <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo" style="height: 86px; max-height: 86px; max-width: 380px; width: auto; object-fit: contain;">
+                <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo"
+                    style="height: 86px; max-height: 86px; max-width: 380px; width: auto; object-fit: contain;">
             </a>
             <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
                 <ul>
                     <li><a href="{{ url_for('index') }}" id="navHome">Home</a></li>
                     <li><a href="{{ url_for('about') }}" id="navAbout">About Us</a></li>
                     <li class="nav-dropdown-wrapper">
-                        <a href="{{ url_for('products') }}" id="navProducts" class="nav-item-dropdown">Products <span class="caret"></span></a>
+                        <a href="{{ url_for('products') }}" id="navProducts" class="nav-item-dropdown">Products <span
+                                class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ url_for('products') }}">All Products</a></li>
                             <li><a href="{{ url_for('products') }}?filter=polyolefins">Agro PET Bottles</a></li>
@@ -33,12 +38,15 @@
                             <li><a href="{{ url_for('products') }}?filter=performance">Caps & Closures</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ url_for('manufacturing') }}" class="active" id="navManufacturing">Manufacturing</a></li>
+                    <li><a href="{{ url_for('manufacturing') }}" class="active" id="navManufacturing">Manufacturing</a>
+                    </li>
                     <li><a href="{{ url_for('contact') }}" id="navContact">Contact</a></li>
                     <li>
-                        <a href="https://wa.me/919825408222" target="_blank" rel="noopener noreferrer" class="nav-whatsapp-btn" id="navWhatsApp" aria-label="Chat on WhatsApp">
+                        <a href="https://wa.me/919558888611" target="_blank" rel="noopener noreferrer"
+                            class="nav-whatsapp-btn" id="navWhatsApp" aria-label="Chat on WhatsApp">
                             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                             </svg>
                             WhatsApp Chat
                         </a>
@@ -47,7 +55,7 @@
             </nav>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" />
                 </svg>
             </button>
         </div>
@@ -68,13 +76,16 @@
     <section class="section" id="moldingMethods" aria-labelledby="manufacturingHeading" style="padding-top: 4rem;">
         <div class="container">
             <div class="section-header reveal" style="margin-bottom: 2rem;">
-                <h2 id="manufacturingHeading" class="text-gradient-dark" style="font-weight: 800; font-size: 2.2rem; text-transform: uppercase;">Manufacturing</h2>
-                <p style="color: var(--color-secondary); font-size: 1.1rem; margin-top: 0.5rem;">Specialisation in various plastic processing techniques</p>
+                <h2 id="manufacturingHeading" class="text-gradient-dark"
+                    style="font-weight: 800; font-size: 2.2rem; text-transform: uppercase;">Manufacturing</h2>
+                <p style="color: var(--color-secondary); font-size: 1.1rem; margin-top: 0.5rem;">Specialisation in
+                    various plastic processing techniques</p>
             </div>
 
             <div class="molding-grid">
                 <!-- Column 1: Injection Molding -->
-                <div class="molding-card reveal" style="background-image: url('/static/images/pet_preforms_bg_new.jpg');">
+                <div class="molding-card reveal"
+                    style="background-image: url('/static/images/pet_preforms_bg_new.jpg');">
                     <div class="molding-card-content">
                         <h2>Injection Molding</h2>
                         <ul class="molding-card-list">
@@ -87,7 +98,8 @@
                 </div>
 
                 <!-- Column 2: Blow Molding -->
-                <div class="molding-card reveal" style="background-image: url('/static/images/pet_bottles_bg_new.jpg');">
+                <div class="molding-card reveal"
+                    style="background-image: url('/static/images/pet_bottles_bg_new.jpg');">
                     <div class="molding-card-content">
                         <h2>Injection Stretch Blow Molding</h2>
                         <ul class="molding-card-list">
@@ -101,23 +113,34 @@
     </section>
 
     <!-- Production Capacity & Scale Section -->
-    <section class="section" id="productionCapacity" aria-labelledby="capacityHeading" style="background-color: var(--color-bg-dark); padding-top: 4rem; padding-bottom: 4rem;">
+    <section class="section" id="productionCapacity" aria-labelledby="capacityHeading"
+        style="background-color: var(--color-bg-dark); padding-top: 4rem; padding-bottom: 4rem;">
         <div class="container">
             <div class="section-header text-center reveal" style="margin-bottom: 3.5rem;">
-                <span class="section-tag" style="color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Operational Scale</span>
-                <h2 id="capacityHeading" class="text-gradient-dark" style="font-weight: 800; font-size: 2.2rem; margin-top: 0.5rem; text-transform: uppercase;">Our Production Capacity</h2>
-                <p style="color: var(--color-secondary); font-size: 1.1rem; margin-top: 0.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    We operate advanced high-volume, automatic production lines to deliver prompt packaging solutions for agro, chemical, and pharma applications.
+                <span class="section-tag"
+                    style="color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Operational
+                    Scale</span>
+                <h2 id="capacityHeading" class="text-gradient-dark"
+                    style="font-weight: 800; font-size: 2.2rem; margin-top: 0.5rem; text-transform: uppercase;">Our
+                    Production Capacity</h2>
+                <p
+                    style="color: var(--color-secondary); font-size: 1.1rem; margin-top: 0.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    We operate advanced high-volume, automatic production lines to deliver prompt packaging solutions
+                    for agro, chemical, and pharma applications.
                 </p>
             </div>
 
             <div class="grid grid-4">
                 <!-- Capacity Card 1: Stretch Blow Molding -->
-                <div class="card reveal" style="text-align: center; border-radius: var(--radius-md); background: var(--color-card-bg);">
-                    <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" style="margin: 0 auto 1.5rem auto; width: 44px; height: 44px; stroke: var(--color-accent); fill: none; stroke-width: 2;">
-                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/>
+                <div class="card reveal"
+                    style="text-align: center; border-radius: var(--radius-md); background: var(--color-card-bg);">
+                    <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"
+                        style="margin: 0 auto 1.5rem auto; width: 44px; height: 44px; stroke: var(--color-accent); fill: none; stroke-width: 2;">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"
+                            stroke-linejoin="round" />
                     </svg>
-                    <h3 style="font-size: 2rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">150,000+</h3>
+                    <h3 style="font-size: 2rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">
+                        150,000+</h3>
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Bottles / Day</h4>
                     <p style="font-size: 0.875rem; margin-bottom: 0; color: var(--color-text-light);">
                         High-volume Stretch Blow Molding output for agro-chemical PET containers.
@@ -125,13 +148,17 @@
                 </div>
 
                 <!-- Capacity Card 2: Injection Molding -->
-                <div class="card reveal" style="text-align: center; border-radius: var(--radius-md); background: var(--color-card-bg);">
-                    <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" style="margin: 0 auto 1.5rem auto; width: 44px; height: 44px; stroke: var(--color-accent); fill: none; stroke-width: 2;">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        <path d="M2 12h20"/>
+                <div class="card reveal"
+                    style="text-align: center; border-radius: var(--radius-md); background: var(--color-card-bg);">
+                    <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"
+                        style="margin: 0 auto 1.5rem auto; width: 44px; height: 44px; stroke: var(--color-accent); fill: none; stroke-width: 2;">
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        <path d="M2 12h20" />
                     </svg>
-                    <h3 style="font-size: 2rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">250,000+</h3>
+                    <h3 style="font-size: 2rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">
+                        250,000+</h3>
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Caps & Closures / Day</h4>
                     <p style="font-size: 0.875rem; margin-bottom: 0; color: var(--color-text-light);">
                         High-speed PP/HDPE cap injection lines featuring tamper-evident seals.
@@ -139,12 +166,15 @@
                 </div>
 
                 <!-- Capacity Card 3: Plant Infrastructure -->
-                <div class="card reveal" style="text-align: center; border-radius: var(--radius-md); background: var(--color-card-bg);">
-                    <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" style="margin: 0 auto 1.5rem auto; width: 44px; height: 44px; stroke: var(--color-accent); fill: none; stroke-width: 2;">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                        <polyline points="9 22 9 12 15 12 15 22"/>
+                <div class="card reveal"
+                    style="text-align: center; border-radius: var(--radius-md); background: var(--color-card-bg);">
+                    <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"
+                        style="margin: 0 auto 1.5rem auto; width: 44px; height: 44px; stroke: var(--color-accent); fill: none; stroke-width: 2;">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
-                    <h3 style="font-size: 2rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">25,000+</h3>
+                    <h3 style="font-size: 2rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">
+                        25,000+</h3>
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Sq. Ft. Facility</h4>
                     <p style="font-size: 0.875rem; margin-bottom: 0; color: var(--color-text-light);">
                         Integrated manufacturing, cleanroom zones, QA lab, and warehouse in Ankleshwar, Gujarat.
@@ -152,11 +182,15 @@
                 </div>
 
                 <!-- Capacity Card 4: Modern Machinery -->
-                <div class="card reveal" style="text-align: center; border-radius: var(--radius-md); background: var(--color-card-bg);">
-                    <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true" style="margin: 0 auto 1.5rem auto; width: 44px; height: 44px; stroke: var(--color-accent); fill: none; stroke-width: 2;">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                <div class="card reveal"
+                    style="text-align: center; border-radius: var(--radius-md); background: var(--color-card-bg);">
+                    <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"
+                        style="margin: 0 auto 1.5rem auto; width: 44px; height: 44px; stroke: var(--color-accent); fill: none; stroke-width: 2;">
+                        <path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                     </svg>
-                    <h3 style="font-size: 2rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">ASB & Toshiba</h3>
+                    <h3 style="font-size: 2rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">
+                        ASB & Toshiba</h3>
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Precision Machinery</h4>
                     <p style="font-size: 0.875rem; margin-bottom: 0; color: var(--color-text-light);">
                         Equipped with automatic Japanese molding machines and precision hot-runner tooling.
@@ -175,17 +209,30 @@
                         <img src="/static/images/logo.png" alt="Krishna Polymer Industries Logo" class="site-logo">
                     </a>
                 </div>
-                <p>Krishna Polymer Industry is a premier manufacturer of high-quality PET bottles, caps, and chemical containers. Serving global agro, pharma, and industrial sectors with excellence since 1998.</p>
+                <p>Krishna Polymer Industry is a premier manufacturer of high-quality PET bottles, caps, and chemical
+                    containers. Serving global agro, pharma, and industrial sectors with excellence since 1998.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
                     </a>
                     <a href="#" class="social-icon" aria-label="Twitter">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
                     </a>
-                    <a href="https://wa.me/919825408222" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none" aria-hidden="true">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    <a href="https://wa.me/919558888611" class="social-icon" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none"
+                            aria-hidden="true">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
                     </a>
                 </div>
@@ -210,8 +257,10 @@
             </div>
             <div class="footer-col footer-newsletter">
                 <h4>Stay Updated</h4>
-                <p>Subscribe to our newsletter to receive the latest updates on polymer technology advancements and product releases.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                <p>Subscribe to our newsletter to receive the latest updates on polymer technology advancements and
+                    product releases.</p>
+                <form class="newsletter-form"
+                    onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
                     <input type="email" placeholder="Your email address" required aria-label="Email for Newsletter">
                     <button type="submit" class="btn btn-primary btn-sm" style="padding: 0 1.25rem;">Join</button>
                 </form>
@@ -228,36 +277,46 @@
         <div class="review-modal-content">
             <button class="close-modal" id="closeReviewModal" aria-label="Close review modal">&times;</button>
             <h2 id="modalTitle" class="text-gradient-dark">Customer Review</h2>
-            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1.5rem;">We value your feedback. Please share your experience with us.</p>
+            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1.5rem;">We value your feedback.
+                Please share your experience with us.</p>
             <form id="reviewForm" novalidate>
                 <div class="form-group" style="margin-bottom: 1.25rem;">
-                    <label for="revName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Full Name *</label>
+                    <label for="revName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Full Name
+                        *</label>
                     <input type="text" id="revName" required style="width: 100%;">
                 </div>
-                
+
                 <div class="form-group" style="margin-bottom: 1.25rem;">
-                    <label for="revEmail" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Address *</label>
+                    <label for="revEmail" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Address
+                        *</label>
                     <input type="email" id="revEmail" required style="width: 100%;">
                 </div>
-                
+
                 <div class="form-group" style="margin-bottom: 1.25rem;">
                     <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Rating *</label>
                     <div class="star-rating" id="modalStars" role="radiogroup" aria-label="Rating out of 5 stars">
-                        <span class="star" data-rating="1" role="radio" aria-checked="false" tabindex="0" aria-label="1 Star">&#9733;</span>
-                        <span class="star" data-rating="2" role="radio" aria-checked="false" tabindex="-1" aria-label="2 Stars">&#9733;</span>
-                        <span class="star" data-rating="3" role="radio" aria-checked="false" tabindex="-1" aria-label="3 Stars">&#9733;</span>
-                        <span class="star" data-rating="4" role="radio" aria-checked="false" tabindex="-1" aria-label="4 Stars">&#9733;</span>
-                        <span class="star" data-rating="5" role="radio" aria-checked="false" tabindex="-1" aria-label="5 Stars">&#9733;</span>
+                        <span class="star" data-rating="1" role="radio" aria-checked="false" tabindex="0"
+                            aria-label="1 Star">&#9733;</span>
+                        <span class="star" data-rating="2" role="radio" aria-checked="false" tabindex="-1"
+                            aria-label="2 Stars">&#9733;</span>
+                        <span class="star" data-rating="3" role="radio" aria-checked="false" tabindex="-1"
+                            aria-label="3 Stars">&#9733;</span>
+                        <span class="star" data-rating="4" role="radio" aria-checked="false" tabindex="-1"
+                            aria-label="4 Stars">&#9733;</span>
+                        <span class="star" data-rating="5" role="radio" aria-checked="false" tabindex="-1"
+                            aria-label="5 Stars">&#9733;</span>
                     </div>
                     <input type="hidden" id="revRating" value="0">
                 </div>
-                
+
                 <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="revText" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Review *</label>
+                    <label for="revText" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Review
+                        *</label>
                     <textarea id="revText" rows="4" required style="width: 100%; resize: vertical;"></textarea>
                 </div>
-                
-                <button type="submit" class="btn btn-primary" id="submitReviewBtn" style="width: 100%;">Submit Review</button>
+
+                <button type="submit" class="btn btn-primary" id="submitReviewBtn" style="width: 100%;">Submit
+                    Review</button>
                 <div id="reviewStatus" class="form-status" style="margin-top: 1rem; display: none;"></div>
             </form>
         </div>
@@ -267,7 +326,7 @@
     <div id="galleryModal" class="gallery-modal" aria-hidden="true" role="dialog" aria-labelledby="galleryModalTitle">
         <div class="gallery-modal-content">
             <button class="close-gallery" id="closeGalleryModal" aria-label="Close gallery">&times;</button>
-            
+
             <!-- Grid View -->
             <div class="gallery-grid-view" id="galleryGridView">
                 <h3 class="gallery-grid-title" id="galleryGridTitle">Pet Bottles</h3>
@@ -326,8 +385,9 @@
             <!-- Lightbox View (Hidden by default) -->
             <div class="gallery-lightbox-view" id="galleryLightboxView" style="display: none; width: 100%;">
                 <button class="btn-back-grid" id="galleryBackToGridBtn" aria-label="Back to grid">
-                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" style="vertical-align: middle; margin-right: 6px;">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                        style="vertical-align: middle; margin-right: 6px;">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
                     </svg>
                     Back to Grid
                 </button>
@@ -340,7 +400,8 @@
                     <button class="gallery-next" id="galleryNextBtn" aria-label="Next image">&#10095;</button>
                 </div>
                 <div class="gallery-thumbnails" id="galleryThumbnails">
-                    <img class="gallery-thumb" src="/static/images/gallery_yellow.jpg" data-index="0" alt="Yellow Bottles">
+                    <img class="gallery-thumb" src="/static/images/gallery_yellow.jpg" data-index="0"
+                        alt="Yellow Bottles">
                     <img class="gallery-thumb" src="/static/images/isbm_orange.jpg" data-index="1" alt="Orange Bottles">
                     <img class="gallery-thumb" src="/static/images/isbm_green.jpg" data-index="2" alt="Green Bottles">
                     <img class="gallery-thumb" src="/static/images/isbm_blue.jpg" data-index="3" alt="Blue Bottles">
@@ -351,7 +412,16 @@
         </div>
     </div>
 
+    <!-- Floating WhatsApp Chat Widget -->
+    <a href="https://wa.me/919558888611" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floatingWhatsApp" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>WhatsApp Chat</span>
+    </a>
+
     <!-- Scripts -->
     <script src="/static/js/main.js"></script>
 </body>
+
 </html>
