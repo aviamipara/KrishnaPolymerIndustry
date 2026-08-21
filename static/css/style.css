@@ -236,21 +236,21 @@ header.site-header.scrolled {
 .nav-container,
 header.site-header .nav-container,
 header.site-header .container.nav-container {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
     transition: height var(--transition-normal);
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 2rem !important;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
     position: relative;
 }
 header.site-header.scrolled .nav-container,
 header.site-header.scrolled .container.nav-container {
-    height: 80px;
-    padding: 0 2rem !important;
+    height: 75px;
+    padding: 0 2rem;
 }
 
 .logo-link {
@@ -258,28 +258,29 @@ header.site-header.scrolled .container.nav-container {
     align-items: center;
     flex-shrink: 0;
     margin-right: auto;
+    max-width: calc(100% - 60px);
 }
 .site-logo,
 header.site-header .site-logo,
 .logo-link .site-logo {
-    height: 86px !important;
-    max-height: 86px !important;
-    max-width: 380px !important;
-    width: auto !important;
+    height: 75px;
+    max-height: 75px;
+    max-width: 350px;
+    width: auto;
     object-fit: contain;
     display: block;
     transition: height var(--transition-normal), max-width var(--transition-normal);
 }
 header.site-header.scrolled .site-logo,
 header.site-header.scrolled .logo-link .site-logo {
-    height: 70px !important;
-    max-height: 70px !important;
-    max-width: 310px !important;
+    height: 60px;
+    max-height: 60px;
+    max-width: 280px;
 }
 .footer-logo .site-logo {
-    height: 64px !important;
-    max-height: 64px !important;
-    max-width: 240px !important;
+    height: 64px;
+    max-height: 64px;
+    max-width: 240px;
 }
 
 nav.main-nav > ul {
@@ -1415,32 +1416,45 @@ table.spec-table tr:hover {
         display: flex;
     }
     header.site-header {
-        height: 78px;
+        height: auto;
     }
-    header.site-header.scrolled {
-        height: 68px;
+    .nav-container,
+    header.site-header .nav-container,
+    header.site-header .container.nav-container {
+        height: 72px;
+        padding: 0 1.25rem;
     }
-    .nav-container {
-        height: 78px;
-        padding: 0 1.5rem;
+    header.site-header.scrolled .nav-container,
+    header.site-header.scrolled .container.nav-container {
+        height: 64px;
+        padding: 0 1.25rem;
     }
-    header.site-header.scrolled .nav-container {
-        height: 68px;
-        padding: 0 1.5rem;
+    .logo-link {
+        flex: 0 1 auto;
+        min-width: 0;
+        max-width: calc(100% - 56px);
+        margin-right: auto;
     }
-    .site-logo {
-        height: 56px;
-        max-width: 250px;
-    }
-    header.site-header.scrolled .site-logo {
+    .site-logo,
+    header.site-header .site-logo,
+    .logo-link .site-logo {
         height: 48px;
-        max-width: 220px;
+        max-height: 48px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+    header.site-header.scrolled .site-logo,
+    header.site-header.scrolled .logo-link .site-logo {
+        height: 42px;
+        max-height: 42px;
+        max-width: 100%;
     }
 
     /* Mobile slide-down drawer */
     nav.main-nav {
         position: fixed;
-        top: 78px;
+        top: 72px;
         left: 0;
         width: 100%;
         height: 0;
@@ -1453,12 +1467,15 @@ table.spec-table tr:hover {
     }
     header.site-header.scrolled + nav.main-nav,
     header.site-header.scrolled nav.main-nav {
-        top: 68px;
+        top: 64px;
     }
     nav.main-nav.active {
-        height: calc(100vh - 78px);
+        height: calc(100vh - 72px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+    }
+    header.site-header.scrolled nav.main-nav.active {
+        height: calc(100vh - 64px);
     }
     nav.main-nav > ul {
         flex-direction: column;
@@ -1706,6 +1723,49 @@ table.spec-table tr:hover {
     .container {
         padding: 0 1rem;
     }
+    .nav-container,
+    header.site-header .nav-container,
+    header.site-header .container.nav-container {
+        height: 64px;
+        padding: 0 0.85rem;
+    }
+    header.site-header.scrolled .nav-container,
+    header.site-header.scrolled .container.nav-container {
+        height: 58px;
+        padding: 0 0.85rem;
+    }
+    .logo-link {
+        max-width: calc(100% - 48px);
+        margin-right: 0.5rem;
+    }
+    .site-logo,
+    header.site-header .site-logo,
+    .logo-link .site-logo {
+        height: 40px;
+        max-height: 40px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+    header.site-header.scrolled .site-logo,
+    header.site-header.scrolled .logo-link .site-logo {
+        height: 36px;
+        max-height: 36px;
+        max-width: 100%;
+    }
+    nav.main-nav {
+        top: 64px;
+    }
+    header.site-header.scrolled + nav.main-nav,
+    header.site-header.scrolled nav.main-nav {
+        top: 58px;
+    }
+    nav.main-nav.active {
+        height: calc(100vh - 64px);
+    }
+    header.site-header.scrolled nav.main-nav.active {
+        height: calc(100vh - 58px);
+    }
     .section {
         padding: 3.5rem 0;
     }
@@ -1800,32 +1860,54 @@ table.spec-table tr:hover {
 /* Extra Small Mobile (max-width: 400px) */
 @media (max-width: 400px) {
     header.site-header {
-        height: 68px;
+        height: auto;
     }
-    .nav-container {
-        height: 68px;
-        padding: 0 1rem;
+    .nav-container,
+    header.site-header .nav-container,
+    header.site-header .container.nav-container {
+        height: 56px;
+        padding: 0 0.65rem;
     }
-    header.site-header.scrolled .nav-container {
-        height: 62px;
+    header.site-header.scrolled .nav-container,
+    header.site-header.scrolled .container.nav-container {
+        height: 50px;
+        padding: 0 0.65rem;
     }
-    .site-logo {
-        height: 44px;
-        max-width: 200px;
+    .logo-link {
+        max-width: calc(100% - 42px);
+        margin-right: 0.25rem;
     }
-    header.site-header.scrolled .site-logo {
-        height: 38px;
-        max-width: 175px;
+    .site-logo,
+    header.site-header .site-logo,
+    .logo-link .site-logo {
+        height: 34px;
+        max-height: 34px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+    header.site-header.scrolled .site-logo,
+    header.site-header.scrolled .logo-link .site-logo {
+        height: 30px;
+        max-height: 30px;
+        max-width: 100%;
     }
     .menu-toggle {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
     }
     nav.main-nav {
-        top: 68px;
+        top: 56px;
+    }
+    header.site-header.scrolled + nav.main-nav,
+    header.site-header.scrolled nav.main-nav {
+        top: 50px;
     }
     nav.main-nav.active {
-        height: calc(100vh - 68px);
+        height: calc(100vh - 56px);
+    }
+    header.site-header.scrolled nav.main-nav.active {
+        height: calc(100vh - 50px);
     }
     
     .filter-tabs {
