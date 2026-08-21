@@ -148,14 +148,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const dropdownWrappers = mainNav.querySelectorAll('.nav-dropdown-wrapper');
         dropdownWrappers.forEach(wrapper => {
             const dropdownLink = wrapper.querySelector('.nav-item-dropdown');
-            if (dropdownLink) {
+            const dropdownMenu = wrapper.querySelector('.dropdown-menu');
+            if (dropdownLink && dropdownMenu) {
                 dropdownLink.addEventListener('click', (e) => {
                     if (window.innerWidth < 992) {
                         e.preventDefault();
-                        wrapper.classList.toggle('open');
-                        const dropdownMenu = wrapper.querySelector('.dropdown-menu');
-                        if (dropdownMenu) {
-                            dropdownMenu.classList.toggle('show');
+                        e.stopPropagation();
+                        
+                        const isCurrentlyOpen = wrapper.classList.contains('open');
+                        
+                        // Close any other open nav dropdowns first
+                        dropdownWrappers.forEach(otherWrapper => {
+                            if (otherWrapper !== wrapper) {
+                                otherWrapper.classList.remove('open');
+                                const otherMenu = otherWrapper.querySelector('.dropdown-menu');
+                                if (otherMenu) otherMenu.classList.remove('show');
+                            }
+                        });
+
+                        if (isCurrentlyOpen) {
+                            wrapper.classList.remove('open');
+                            dropdownMenu.classList.remove('show');
+                        } else {
+                            wrapper.classList.add('open');
+                            dropdownMenu.classList.add('show');
                         }
                     }
                 });
@@ -808,44 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Products Nav Dropdown Logic ---
-    const productsNavBtn = document.getElementById('navProducts');
-    if (productsNavBtn) {
-        const parentLi = productsNavBtn.parentElement;
-        const dropdownMenu = parentLi.querySelector('.dropdown-menu');
 
-        if (dropdownMenu) {
-            productsNavBtn.addEventListener('click', (e) => {
-                if (window.innerWidth < 992) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    const isOpen = parentLi.classList.contains('open');
-                    
-                    // Close any other open nav dropdowns first
-                    document.querySelectorAll('.nav-dropdown-wrapper').forEach(wrapper => {
-                        wrapper.classList.remove('open');
-                        const menu = wrapper.querySelector('.dropdown-menu');
-                        if (menu) menu.classList.remove('show');
-                    });
-
-                    if (!isOpen) {
-                        parentLi.classList.add('open');
-                        dropdownMenu.classList.add('show');
-                    } else {
-                        parentLi.classList.remove('open');
-                        dropdownMenu.classList.remove('show');
-                    }
-                }
-            });
-
-            // Close dropdown when clicking outside (mostly for mobile/tablet)
-            window.addEventListener('click', () => {
-                parentLi.classList.remove('open');
-                dropdownMenu.classList.remove('show');
-            });
-        }
-    }
 
     // --- Product Innovation Showcase Tabs (about.html) ---
     const showcaseTabs = document.querySelectorAll('.showcase-tab');

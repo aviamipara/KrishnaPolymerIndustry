@@ -1514,36 +1514,48 @@ table.spec-table tr:hover {
         width: 100%;
     }
     .nav-dropdown-wrapper .dropdown-menu {
-        position: static;
-        transform: none;
-        width: 100%;
-        min-width: 100%;
-        background-color: var(--color-bg-dark);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-sm);
-        margin-top: 0.25rem;
-        padding: 0.25rem 0.5rem;
-        box-shadow: none;
-        display: none;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
+        position: static !important;
+        transform: none !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        background-color: #f1f5f9 !important;
+        border: 1px solid var(--color-border) !important;
+        border-radius: var(--radius-sm) !important;
+        margin-top: 0.35rem !important;
+        margin-bottom: 0.35rem !important;
+        padding: 0.35rem 0.5rem !important;
+        box-shadow: none !important;
+        display: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
     }
     .nav-dropdown-wrapper.open .dropdown-menu,
     .nav-dropdown-wrapper .dropdown-menu.show {
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .nav-dropdown-wrapper .dropdown-menu li {
+        width: 100% !important;
+        list-style: none !important;
     }
     .nav-dropdown-wrapper .dropdown-menu a {
         font-size: 0.95rem !important;
-        padding: 0.65rem 1rem !important;
-        color: var(--color-text-light) !important;
+        padding: 0.7rem 1.25rem !important;
+        color: var(--color-text-main) !important;
         font-weight: 500 !important;
-        border-radius: var(--radius-sm);
+        border-radius: var(--radius-sm) !important;
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     .nav-dropdown-wrapper .dropdown-menu a:hover {
         color: var(--color-accent) !important;
-        background-color: rgba(14, 165, 233, 0.08) !important;
+        background-color: rgba(14, 165, 233, 0.12) !important;
+    }
+    .nav-dropdown-wrapper.open .caret,
+    .nav-dropdown-wrapper.open .nav-item-dropdown .caret {
+        transform: rotate(180deg) !important;
     }
 
     .nav-cta {
